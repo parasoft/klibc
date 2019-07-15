@@ -17,7 +17,7 @@ CFLAGS:=-DCPPTEST_SHARED=0 \
 	-D_BITSIZE=${KLIBC_BITNESS} \
 	-fno-stack-protector \
 	-fwrapv \
-	-m64 \
+	-m${KLIBC_BITNESS} \
 	-nostdinc \
 	-iwithprefix include \
 	-I $(KLIBC_PREFIX)/include/arch/$(KLIBC_ARCH) \

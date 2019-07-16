@@ -1,5 +1,5 @@
-## Guide to settting up an envrionment aproprite to build and run Linux kernel Unit Tests with CPPtest.
-###### The curent version is just a dump of my notes on bootstraping my own dev env
+## Guide to setting up an environment appropriate to build and run Linux kernel Unit Tests with CPPtest.
+###### The current version is just a dump of my notes on bootstraping my own dev env
 
 ### This guide assumes:
 * Cpptest 10.4 Professional is installed

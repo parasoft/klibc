@@ -19,4 +19,6 @@
  
  ### In CppTest GUI:
  * New project from CPPtest bdf ( use the bdf generated from cpptesttrace
- * Modify Project Properties -> 
+ * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
+   * "Compiler options" append with `-isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
+   * "Linker options" append with `TBD`

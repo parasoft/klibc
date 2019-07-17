@@ -19,19 +19,19 @@
  
  ### In CppTest GUI:
  #### Linux project setup:
- * New project from CPPtest bdf ( use the bdf generated from cpptesttrace
+ * New project from CPPtest bdf ( use the bdf generated from cpptesttrace )
  * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
    * "Compiler options" append with `-isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
    * "Linker options" append with `TBD`
- #### Make user defined versoin of, File Scoped, Test Configuration for Stub Generation:
+ #### Make user defined version of, File Scoped, Test Configuration for Stub Generation:
  * In the top navigation bar click on Parasoft -> Test Configurations...
-  * In the left pannel navigate to the item: Builtin -> Unit Testing -> File Scope -> Generate Stubs (File Scope)
+  * In the left panel navigate to the item: Builtin -> Unit Testing -> File Scope -> Generate Stubs (File Scope)
   * Right click on Generate Stubs (File Scope) -> Duplicate
   * The duplacte will reside in User-defined -> Unit Testing -> File Scope -> {name of new test configuration}
   * click on the new Test Configuration:
-    * Find "Executaion" tab -> "Symbols" tab -> "Ues extra symbols from file found in:" dioglue box.
+    * Find "Executaion" tab -> "Symbols" tab -> "Use extra symbols from file found in:" dialog box.
     * Remove the string "${cpptest:cfg_dir}/safestubs;"
- #### Get statrted Unit Testing a source file:
+ #### Get started Unit Testing a source file:
  * In Navigator right click on a source file and drill down to: Parasoft -> Test Using -> Builtin -> Unit Testing -> Generate Test Suite
  * In Test Case Explorer right click on TestSuite_{source file name} and drill down to: Add New -> Test Case Using Editor...
  * Open the new test case in the editor.

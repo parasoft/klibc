@@ -52,6 +52,7 @@ typedef int sig_atomic_t;
 __extern const char *const sys_siglist[_NSIG];
 __extern const char *const sys_sigabbrev[_NSIG];
 
+#ifndef PARASOFT_CPPTEST
 /* This assumes sigset_t is either an unsigned long or an array of such,
    and that _NSIG_BPW in the kernel is always LONG_BIT */
 
@@ -86,6 +87,7 @@ static __inline__ int sigismember(sigset_t * __set, int __signum)
 	return (int)((__lset[__signum / LONG_BIT] >> (__signum % LONG_BIT)) &
 		     1);
 }
+#endif
 
 __extern __sighandler_t __signal(int, __sighandler_t, int);
 #ifndef signal
@@ -94,7 +96,7 @@ __extern __sighandler_t signal(int, __sighandler_t);
 __extern __sighandler_t sysv_signal(int, __sighandler_t);
 __extern __sighandler_t bsd_signal(int, __sighandler_t);
 __extern int sigaction(int, const struct sigaction *, struct sigaction *);
-__extern int sigprocmask(int, const sigset_t *, sigset_t *);
+__extern int sigprocmask(int, sigset_t *, sigset_t *);
 __extern int sigpending(sigset_t *);
 __extern int sigsuspend(const sigset_t *);
 __extern int raise(int);

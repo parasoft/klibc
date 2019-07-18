@@ -113,11 +113,13 @@ struct tgr_code_helper
 
   tgr_code_helper_ptr (TRIGGER_CDECL *ULLong)(TRIGGER_UINTEGER ull);
 
+#ifndef __KERNEL__
   tgr_code_helper_ptr (TRIGGER_CDECL *Float)(float f);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *Double)(double d);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *LDouble)(TRIGGER_FLOATING ld);
+#endif
   
   tgr_code_helper_ptr (TRIGGER_CDECL *Func)(tgr_func_ptr func);
   
@@ -147,11 +149,13 @@ struct tgr_code_helper
 
   tgr_code_helper_ptr (TRIGGER_CDECL *ULLongPtr)(const volatile TRIGGER_UINTEGER* ptr);
 
+#ifndef __KERNEL__
   tgr_code_helper_ptr (TRIGGER_CDECL *FloatPtr)(const volatile float* ptr);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *DoublePtr)(const volatile double* ptr);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *LDoublePtr)(const volatile TRIGGER_FLOATING* ptr);
+#endif
 
   tgr_code_helper_ptr (TRIGGER_CDECL *CharRef)(const volatile char* ref);
 
@@ -177,11 +181,13 @@ struct tgr_code_helper
 
   tgr_code_helper_ptr (TRIGGER_CDECL *ULLongRef)(const volatile TRIGGER_UINTEGER* ref);
 
+#ifndef __KERNEL__
   tgr_code_helper_ptr (TRIGGER_CDECL *FloatRef)(const volatile float* ref);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *DoubleRef)(const volatile double* ref);
 
   tgr_code_helper_ptr (TRIGGER_CDECL *LDoubleRef)(const volatile TRIGGER_FLOATING* ref);
+#endif
 
   tgr_code_helper_ptr (TRIGGER_CDECL *VoidPtrRef)(const volatile void* ref);
 
@@ -343,6 +349,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_llong(TRIGGER_INTEGER ll);
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ullong(TRIGGER_UINTEGER ull);
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_float(float f);
 
@@ -351,6 +358,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_double(double d);
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble(TRIGGER_FLOATING ld);
+#endif
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_func(tgr_func_ptr func);
@@ -394,6 +402,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_llong_ptr(const volatile TRIGG
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ullong_ptr(const volatile TRIGGER_UINTEGER* ptr);
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_float_ptr(const volatile float* ptr);
 
@@ -402,6 +411,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_double_ptr(const volatile doub
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble_ptr(const volatile TRIGGER_FLOATING* ptr);
+#endif
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_char_ref(const volatile char* ref);
@@ -439,6 +449,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_llong_ref(const volatile TRIGG
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ullong_ref(const volatile TRIGGER_UINTEGER* ref);
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_float_ref(const volatile float* ref);
 
@@ -447,6 +458,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_double_ref(const volatile doub
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble_ref(const volatile TRIGGER_FLOATING* ref);
+#endif
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_void_ptr_ref(const volatile void* ref);
@@ -893,7 +905,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_double(double d)
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble(TRIGGER_FLOATING ld)
 {
-  tgr_code_add_instruction_with_arg(*tgr_get_curr_code(), 
+tgr_double_type  tgr_code_add_instruction_with_arg(*tgr_get_curr_code(), 
                                     c_tgr_instruction_value, 
                                     tgr_ldouble(ld));
   return tgr_code_helper_instance();
@@ -1026,6 +1038,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ullong_ptr(const volatile TRIG
   return tgr_code_helper_instance();
 }
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_float_ptr(const volatile float* ptr)
 {
@@ -1052,6 +1065,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble_ptr(const volatile TRI
                                     tgr_ldouble_ptr(ptr));
   return tgr_code_helper_instance();
 }
+#endif
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_char_ref(const volatile char* ref)
@@ -1161,6 +1175,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ullong_ref(const volatile TRIG
   return tgr_code_helper_instance();
 }
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_float_ref(const volatile float* ref)
 {
@@ -1187,6 +1202,7 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_ldouble_ref(const volatile TRI
                                     tgr_ldouble_ref(ref));
   return tgr_code_helper_instance();
 }
+#endif
 
 TRIGGER_DECL
 tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_void_ptr_ref(const volatile void* ref)
@@ -1281,9 +1297,11 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_instance(void)
     tgr_code_helper_ulong,
     tgr_code_helper_llong,
     tgr_code_helper_ullong,
+#ifndef __KERNEL__
     tgr_code_helper_float,
     tgr_code_helper_double,
     tgr_code_helper_ldouble,
+#endif
     tgr_code_helper_func,
     tgr_code_helper_void_ptr,
     tgr_code_helper_char_ptr,
@@ -1298,9 +1316,11 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_instance(void)
     tgr_code_helper_ulong_ptr,
     tgr_code_helper_llong_ptr,
     tgr_code_helper_ullong_ptr,
+#ifndef __KERNEL__
     tgr_code_helper_float_ptr,
     tgr_code_helper_double_ptr,
     tgr_code_helper_ldouble_ptr,
+#endif
     tgr_code_helper_char_ref,
     tgr_code_helper_schar_ref,
     tgr_code_helper_uchar_ref,
@@ -1313,9 +1333,11 @@ tgr_code_helper_ptr TRIGGER_CDECL tgr_code_helper_instance(void)
     tgr_code_helper_ulong_ref,
     tgr_code_helper_llong_ref,
     tgr_code_helper_ullong_ref,
+#ifndef __KERNEL__
     tgr_code_helper_float_ref,
     tgr_code_helper_double_ref,
     tgr_code_helper_ldouble_ref,
+#endif
     tgr_code_helper_void_ptr_ref,
     tgr_code_helper_object,
     tgr_code_helper_pointer,

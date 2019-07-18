@@ -91,7 +91,7 @@ edg.binary_literals_allowed TRUE
 edg.bit_field_promotion_applies_to_some_operations TRUE
 edg.bool_is_keyword FALSE
 edg.brief_diagnostics FALSE
-edg.building_runtime FALSE
+edg.building_runtime TRUE
 edg.builtin_va_alist FALSE
 edg.builtin_va_arg_incr FALSE
 edg.c99_bool_is_keyword TRUE
@@ -2005,7 +2005,7 @@ edgtk.optionConfig name=nostartfiles tags=linker
 edgtk.optionConfig name=nodefaultlibs tags=linker
 edgtk.optionConfig name=nostdlib tags=linker
 edgtk.optionConfig name=s tags=linker
-edgtk.optionConfig name=static tags=ignore
+edgtk.optionConfig name=static tags=linker
 edgtk.optionConfig name=static-libgcc tags=linker
 edgtk.optionConfig name=shared tags=ignore
 edgtk.optionConfig name=shared-libgcc tags=linker

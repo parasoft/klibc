@@ -206,7 +206,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_llong_arg(const char*
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ullong_arg(const char* name, 
                                                                       TRIGGER_UINTEGER ull);
-
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_float_arg(const char* name, float f);
 
@@ -216,6 +216,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_double_arg(const char
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ldouble_arg(const char* name, 
                                                                        TRIGGER_FLOATING ld);
+#endif
 
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_func_arg(const char* name, 
@@ -289,6 +290,7 @@ TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_float_ptr_arg(const char* name, 
                                                                          const volatile float* ptr);
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_double_ptr_arg(
                                                                         const char* name, 
@@ -303,6 +305,7 @@ TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ptr_arg(const char* name, 
                                                                    const volatile void* ptr,
                                                                    tgr_type_ptr element_type);
+#endif
 
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_char_ref_arg(const char* name, 
@@ -364,6 +367,7 @@ TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_float_ref_arg(const char* name, 
                                                                          const volatile float* ref);
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_double_ref_arg(
                                                                         const char* name, 
@@ -378,6 +382,7 @@ TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_void_ptr_ref_arg(
                                                                           const char* name, 
                                                                           const volatile void* ref);
+#endif
 
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ptr_ref_arg(const char* name, 
@@ -642,6 +647,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ullong_ptr_arg(
   return tgr_runner_helper_with_value_arg(name, tgr_ullong_ptr(ptr));
 }
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_float_ptr_arg(const char* name, 
                                                                          const volatile float* ptr)
@@ -664,6 +670,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ldouble_ptr_arg(
 {
   return tgr_runner_helper_with_value_arg(name, tgr_ldouble_ptr(ptr));
 }
+#endif
 
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ptr_arg(const char* name, 
@@ -765,6 +772,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ullong_ref_arg(
   return tgr_runner_helper_with_value_arg(name, tgr_ullong_ref(ref));
 }
 
+#ifndef __KERNEL__
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_float_ref_arg(const char* name, 
                                                                          const volatile float* ref)
@@ -787,6 +795,7 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_ldouble_ref_arg(
 {
   return tgr_runner_helper_with_value_arg(name, tgr_ldouble_ref(ref));
 }
+#endif
 
 TRIGGER_DECL
 tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_with_void_ptr_ref_arg(
@@ -853,9 +862,11 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_instance(void)
     tgr_runner_helper_with_ulong_arg,
     tgr_runner_helper_with_llong_arg,
     tgr_runner_helper_with_ullong_arg,
+#ifndef __KERNEL__
     tgr_runner_helper_with_float_arg,
     tgr_runner_helper_with_double_arg,
     tgr_runner_helper_with_ldouble_arg,
+#endif
     tgr_runner_helper_with_func_arg,
     tgr_runner_helper_with_object_arg,
     tgr_runner_helper_with_void_ptr_arg,
@@ -871,9 +882,11 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_instance(void)
     tgr_runner_helper_with_ulong_ptr_arg,
     tgr_runner_helper_with_llong_ptr_arg,
     tgr_runner_helper_with_ullong_ptr_arg,
+#ifndef __KERNEL__
     tgr_runner_helper_with_float_ptr_arg,
     tgr_runner_helper_with_double_ptr_arg,
     tgr_runner_helper_with_ldouble_ptr_arg,
+#endif
     tgr_runner_helper_with_ptr_arg,
     tgr_runner_helper_with_char_ref_arg,
     tgr_runner_helper_with_schar_ref_arg,
@@ -887,9 +900,11 @@ tgr_runner_helper_ptr TRIGGER_CDECL tgr_runner_helper_instance(void)
     tgr_runner_helper_with_ulong_ref_arg,
     tgr_runner_helper_with_llong_ref_arg,
     tgr_runner_helper_with_ullong_ref_arg,
+#ifndef __KERNEL__
     tgr_runner_helper_with_float_ref_arg,
     tgr_runner_helper_with_double_ref_arg,
     tgr_runner_helper_with_ldouble_ref_arg,
+#endif
     tgr_runner_helper_with_void_ptr_ref_arg,
     tgr_runner_helper_with_ptr_ref_arg,
     tgr_runner_helper_with_ref_arg,

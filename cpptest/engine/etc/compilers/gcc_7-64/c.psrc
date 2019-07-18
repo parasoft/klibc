@@ -1989,7 +1989,7 @@ edgtk.optionConfig name=gen-decls tags=preprocessor
 edgtk.optionConfig name=pedantic tags=ignore,enable-warning
 edgtk.optionConfig name=pedantic-errors tags=ignore,warning-to-error
 edgtk.optionConfig name=p tags=preprocessor
-edgtk.optionConfig name=pg tags=preprocessor
+edgtk.optionConfig name=pg tags=ignore
 edgtk.optionConfig name=Q tags=preprocessor
 edgtk.optionConfig name=save-temps tags=compiler
 edgtk.optionConfig name=time tags=ignore

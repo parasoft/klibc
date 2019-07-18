@@ -1,0 +1,2555 @@
+# Recently introduced explicit defaults were carefully chosen
+# to maintain the existing state (e.g. from implicit edg defaults
+# that were used previously). The next step should be to clean-up and simplify
+# this file.
+
+
+edg.targ_has_signed_chars TRUE
+
+edg.targ_sizeof_short 2
+edg.targ_alignof_short 2
+edg.targ_sizeof_int 4
+edg.targ_alignof_int 4
+edg.targ_sizeof_long 8
+edg.targ_alignof_long 8
+edg.targ_sizeof_long_long 8
+edg.targ_alignof_long_long 8
+edg.targ_sizeof_float 4
+edg.targ_alignof_float 4
+edg.targ_sizeof_double 8
+edg.targ_alignof_double 8
+edg.targ_sizeof_long_double 16
+edg.targ_alignof_long_double 16
+
+edg.targ_sizeof_pointer 8
+edg.targ_alignof_pointer 8
+
+edg.targ_sizeof_ptr_to_data_member 8
+edg.targ_alignof_ptr_to_data_member 8
+edg.targ_sizeof_ptr_to_member_function 16
+edg.targ_alignof_ptr_to_member_function 8
+
+edg.targ_ptrdiff_t_int_kind ik_long
+edg.targ_wint_t_int_kind ik_unsigned_int
+
+edg.targ_char32_t_int_kind ik_unsigned_int
+
+edg.targ_wchar_t_int_kind ik_int
+
+edg.targ_flt_mant_dig 24
+edg.targ_flt_min_exp -125
+edg.targ_flt_max_exp 128
+
+edg.targ_dbl_mant_dig 53
+edg.targ_dbl_min_exp -1021
+edg.targ_dbl_max_exp 1024
+
+edg.targ_ldbl_mant_dig 64
+edg.targ_ldbl_min_exp -16381
+edg.targ_ldbl_max_exp 16384
+
+edg.targ_sizeof_virtual_function_info 8
+edg.targ_alignof_virtual_function_info 8
+
+edg.targ_size_t_int_kind ik_unsigned_long
+edg.targ_size_t_max 18446744073709551615
+
+edg.targ_intmax_kind ik_long
+edg.targ_uintmax_kind ik_unsigned_long
+
+edg.targ_ssize_t_int_kind ik_long
+
+edg.targ_pointer_mode 4
+edg.targ_word_mode 4
+
+edg.address_of_ellipsis_allowed FALSE
+edg.addr_of_bit_field_allowed FALSE
+edg.alignas_enabled TRUE
+edg.alignof_enabled TRUE
+edg.allow_anachronisms FALSE
+edg.allow_anon_types_in_anon_unions FALSE
+edg.allow_copy_assignment_op_with_base_class_param FALSE
+edg.allow_default_arg_on_template_member_definition FALSE
+edg.allow_decl_after_stmt TRUE
+edg.allow_dollar_in_id_chars TRUE
+edg.allow_ellipsis_only_param_in_C_mode FALSE
+edg.allow_nonconstant_auto_aggr_init_in_c_mode TRUE
+edg.allow_nonconst_call_anachronism FALSE
+edg.allow_nonconst_ref_anachronism FALSE
+edg.allow_nonstandard_anonymous_unions TRUE
+# for newer gcc versions generally allowed only with '-fms-extensions' (in C mode) - but also as default for some windows
+# gcc versions - it's hard to determine the precise condition, but it seems that it's allowed (or '-fms-extensions'
+# is enabled by default) for 64-bit target windows gcc compilers starting at least from v. 4.9 and also for both 32-bit
+# and 64-bit mingw-w64 compilers starting from v. 4.9 (handled with macroAlias): 
+edg.p_anon_union_c_mode_constructs_with_tags_are_anonymous FALSE
+edg.alternative_tokens_allowed TRUE
+edg.arg_dependent_lookup_enabled FALSE
+edg.array_new_and_delete_enabled FALSE
+edg.c11_atomic_enabled TRUE
+edg.automatic_pch_processing FALSE
+edg.binary_literals_allowed TRUE
+edg.bit_field_promotion_applies_to_some_operations TRUE
+edg.bool_is_keyword FALSE
+edg.brief_diagnostics FALSE
+edg.building_runtime FALSE
+edg.builtin_va_alist FALSE
+edg.builtin_va_arg_incr FALSE
+edg.c99_bool_is_keyword TRUE
+edg.c_and_cpp_function_types_are_distinct TRUE
+edg.C_dialect 0
+edg.cfront_2_1_mode FALSE
+edg.cfront_3_0_mode FALSE
+edg.check_printf_scanf_positional_args TRUE
+edg.class_name_injection_enabled TRUE
+edg.compound_literals_allowed TRUE
+edg.cp_gen_be_target_matches_source_dialect FALSE
+edg.create_microsoft_if_exists_entries FALSE
+edg.create_precompiled_header FALSE
+edg.dcc_mode FALSE
+edg.designators_allowed TRUE
+edg.disable_pound_lines FALSE
+edg.display_compilation_time FALSE
+edg.display_error_number FALSE
+#edg.display_space_used FALSE
+edg.display_template_typedefs_in_diagnostics FALSE
+edg.distinct_template_signatures TRUE
+edg.do_dependent_name_processing FALSE
+edg.do_late_ovl_res_tiebreaker FALSE
+edg.do_not_wrap_diagnostics FALSE
+edg.do_preprocessing_only FALSE
+edg.dplus_mode FALSE
+edg.elab_type_lookup_finds_typedefs FALSE
+edg.ecos_mode FALSE
+edg.emulate_gnu_abi_bugs FALSE
+edg.emulate_gnu_value_initialization_bugs FALSE
+edg.emulate_msvc_value_initialization_bugs FALSE
+edg.emulate_unsafe_gnu_abi_bugs FALSE
+edg.end_of_line_comments_allowed TRUE
+
+# enum related options:
+edg.enum_type_is_integral TRUE
+edg.enum_types_can_be_larger_than_int TRUE
+edg.enum_types_can_be_smaller_than_int FALSE
+edg.p_enum_constant_type_in_c_mode_can_be_other_than_int TRUE
+edg.p_prefer_unsigned_types_for_enum_underlying_type_in_c_mode TRUE
+
+edg.exceptions_enabled FALSE
+edg.explicit_enum_base_enabled FALSE
+edg.explicit_keyword_enabled FALSE
+edg.export_keyword_enabled FALSE
+edg.export_template_allowed FALSE
+edg.extended_designators_allowed TRUE
+edg.extended_friends_enabled FALSE
+edg.extended_variadic_macros_allowed TRUE
+edg.extern_inline_allowed FALSE
+edg.extern_template_allowed FALSE
+edg.fixed_point_enabled FALSE
+edg.flexible_array_members_allowed TRUE
+edg.floating_point_template_parameters_allowed FALSE
+edg.float80_enabled TRUE
+edg.float128_enabled TRUE
+edg.enter_type name=_Float128 type=__float128
+edg.force_implicit_block_in_dependent_statement TRUE
+edg.friend_class_decl_can_find_using_dir FALSE
+edg.friend_class_injection_enabled TRUE
+edg.friend_function_injection_enabled TRUE
+edg.func_prototype_tags_enabled TRUE
+edg.gcc_builtin_varargs_in_generated_code TRUE
+edg.gcc_is_generated_code_target TRUE
+edg.gcc_mode TRUE
+edg.generate_pp_output FALSE
+edg.gen_line_info_in_pp_output TRUE
+edg.gen_old_style_line_dirs FALSE
+edg.ghs_mode FALSE
+edg.gnu_abi_version 79900
+edg.gnu_attributes_enabled TRUE
+edg.gnu_c89_inlining TRUE
+edg.gnu_init_priority_attribute_enabled TRUE
+edg.gnu_restrict_keyword_enabled TRUE
+edg.gnu_target_version_number 79900
+edg.gnu_version 79900
+edg.gpp_dependent_name_lookup FALSE
+edg.gpp_mode FALSE
+edg.gpp_using_directive_lookup FALSE
+edg.guiding_decls_allowed FALSE
+edg.hex_floating_point_constants_allowed TRUE
+edg.hide_edg_problem_with_overload_ambiguity FALSE
+edg.IEEE_handling_on_float_operation_exceptions TRUE
+edg.ignore_edg_version_macros TRUE
+edg.ignore_std_namespace FALSE
+edg.impl_conv_between_c_and_cpp_function_ptrs_allowed FALSE
+edg.implicit_template_inclusion_mode FALSE
+edg.implicit_typename_enabled TRUE
+edg.implicit_using_std FALSE
+edg.import_dir_name .
+edg.include_file_suffixes ::stdh:
+edg.instantiate_extern_inline FALSE
+edg.instantiation_mode 0
+edg.int128_extensions_enabled TRUE
+edg.keep_comments_in_pp_output FALSE
+edg.late_template_ovl_res_tiebreaker FALSE
+edg.line_wrapping FALSE
+edg.list_included_files FALSE
+edg.list_makefile_dependencies FALSE
+edg.long_lifetime_temps FALSE
+edg.long_long_is_standard TRUE
+edg.long_long_promotion_allowed TRUE
+edg.long_preserving_rules FALSE
+edg.microsoft_bugs FALSE
+edg.microsoft_dialect_is_generated_code_target 0
+edg.microsoft_mode FALSE
+edg.microsoft_type_dependent_for_init_scope FALSE
+edg.microsoft_version 1310
+edg.mixed_string_concat_enabled TRUE
+edg.ms_compat FALSE
+edg.ms_extensions FALSE
+edg.msvc_is_generated_code_target FALSE
+edg.msvc_target_version_number 1310
+edg.multibyte_chars_in_source_enabled FALSE
+edg.namespaces_enabled FALSE
+edg.nios_mode FALSE
+edg.no_access_check_on_friend_declarator_ids FALSE
+edg.nonclass_prototype_instantiations FALSE
+edg.nonstandard_default_arg_deduction TRUE
+edg.nonstandard_qualifier_deduction FALSE
+edg.nonstandard_using_decl_allowed FALSE
+edg.nonstd_gnu_keywords_enabled TRUE
+edg.null_chars_allowed_in_source TRUE
+edg.okay_to_eliminate_unneeded_il_entries FALSE
+edg.old_specializations_allowed TRUE
+edg.old_specializations_for_generated_instances FALSE
+edg.one_instantiation_per_object FALSE
+edg.operator_overloading_on_enums_enabled FALSE
+edg.out_of_class_redecl_allowed FALSE
+edg.p__bool_enabled TRUE
+edg.p_allow_missing_vector_init_braces TRUE
+edg.p_builtin_va_list_type_is_char_ptr FALSE
+# following two options were set just to maintain existing behaviour (correct values were not determined):
+edg.p_oversized_bitfield_sizes_allowed FALSE
+edg.p_gen_only_ascii_chars_in_literals FALSE
+edg.p_mmx_gnu_builtin_funcs_allowed TRUE
+edg.p_pointer_in___builtin_stdarg_start_allowed FALSE
+edg.p_routine_type_prefix_attributes_for_routine_parameter_allowed TRUE
+edg.p_routine_type_prefix_attributes_for_field_allowed TRUE
+edg.p_fxsr_gnu_builtin_funcs_allowed TRUE
+edg.p_3dnow_gnu_builtin_funcs_allowed TRUE
+edg.p_clflushopt_gnu_builtin_funcs_allowed TRUE
+edg.p_clwb_gnu_builtin_funcs_allowed TRUE
+edg.p_mmx_gnu_builtin_funcs_allowed TRUE
+edg.p_sse_gnu_builtin_funcs_allowed TRUE
+edg.p_sse2_gnu_builtin_funcs_allowed TRUE
+edg.p_sse3_gnu_builtin_funcs_allowed TRUE
+edg.p_ssse3_gnu_builtin_funcs_allowed TRUE
+edg.p_sse4a_gnu_builtin_funcs_allowed TRUE
+edg.p_sse4_1_gnu_builtin_funcs_allowed TRUE
+edg.p_sse4_2_gnu_builtin_funcs_allowed TRUE
+edg.p_xsave_gnu_builtin_funcs_allowed TRUE
+edg.p_xsavec_gnu_builtin_funcs_allowed TRUE
+edg.p_xsaves_gnu_builtin_funcs_allowed TRUE
+edg.p_avx_gnu_builtin_funcs_allowed TRUE
+edg.p_avx2_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512f_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512bw_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512cd_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512dq_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512er_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512ifma_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512pf_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512vbmi_gnu_builtin_funcs_allowed TRUE
+edg.p_avx512vl_gnu_builtin_funcs_allowed TRUE
+edg.p_aes_gnu_builtin_funcs_allowed TRUE
+edg.p_sha_gnu_builtin_funcs_allowed TRUE
+edg.p_lzcnt_gnu_builtin_funcs_allowed TRUE
+edg.p_bmi_gnu_builtin_funcs_allowed TRUE
+edg.p_bmi2_gnu_builtin_funcs_allowed TRUE
+edg.p_fma_gnu_builtin_funcs_allowed TRUE
+edg.p_fma4_gnu_builtin_funcs_allowed TRUE
+edg.p_xop_gnu_builtin_funcs_allowed TRUE
+edg.p_f16c_gnu_builtin_funcs_allowed TRUE
+edg.p_rtm_gnu_builtin_funcs_allowed TRUE
+edg.p_fsgsbase_gnu_builtin_funcs_allowed TRUE
+edg.p_rdrnd_gnu_builtin_funcs_allowed TRUE
+edg.p_rdseed_gnu_builtin_funcs_allowed TRUE
+edg.p_lwp_gnu_builtin_funcs_allowed TRUE
+edg.p_xsaveopt_gnu_builtin_funcs_allowed TRUE
+edg.p_fsgsbase_gnu_builtin_funcs_allowed TRUE
+edg.p_pclmul_gnu_builtin_funcs_allowed TRUE
+edg.p_pcommit_gnu_builtin_funcs_allowed TRUE
+edg.p_mwaitx_gnu_builtin_funcs_allowed TRUE
+edg.p_tbm_gnu_builtin_funcs_allowed TRUE
+edg.p_type_incompatible_with_mode_allowed FALSE
+edg.p_use_old_gcc_signed_int_enum_const_type_preferring_rules_in_c_mode FALSE
+edg.p_use_symbols_declared_after_template_definition FALSE
+edg.p_use_utc_in_identifiers TRUE
+edg.p_weakref_to_undefined_allowed TRUE
+edg.p_fold_const_valued_vars_with_scalar_types FALSE
+edg.pass_stdarg_references_to_generated_code FALSE
+edg.permissive_gnu_vector_conversions_enabled TRUE
+edg.pcc_preprocessing_mode FALSE
+edg.pp_output_file_needed TRUE
+edg.pragma_define_type_info_is_required FALSE
+edg.pragma_operator_allowed TRUE
+edg.precompiled_header_processing_required FALSE
+edg.process_escapes_in_line_directive TRUE
+edg.prototype_instantiations_in_il FALSE
+edg.qnx_gnu_extensions_enabled FALSE
+edg.recognize_pound_file_directive FALSE
+edg.remove_qualifiers_from_param_types FALSE
+edg.remove_unneeded_entities FALSE
+edg.report_embedded_cplusplus_noncompliance FALSE
+edg.restrict_enabled TRUE
+edg.restrict_keyword_enabled TRUE
+edg.right_shift_can_be_angle_brackets FALSE
+edg.rtti_enabled FALSE
+edg.single_ref_qual_ovl_res_tiebreaker FALSE
+edg.special_subscript_cost FALSE
+edg.st40_gnu_extensions_enabled FALSE
+edg.standard_form_of_extern_template FALSE
+edg.static_assert_enabled TRUE
+edg.std_thread_local_storage_specifier_enabled TRUE
+edg.std_version 201112
+edg.stdc_zero_in_nonstrict_mode FALSE
+edg.stdc_zero_in_system_headers FALSE
+edg.strict_ansi_mode FALSE
+edg.string_literals_are_const FALSE
+edg.string_literals_shared FALSE
+edg.sun_cc_mode FALSE
+edg.sun_is_generated_code_target FALSE
+edg.sun_linker_scope_allowed FALSE
+edg.sun_mode FALSE
+edg.suppress_back_end FALSE
+edg.suppress_inline_corresp_check FALSE
+edg.suppress_pch_messages FALSE
+edg.suppress_used_before_set_warnings FALSE
+edg.SVR4_C_mode FALSE
+edg.thread_local_storage_specifier_enabled TRUE
+edg.trans_unit_test_mode FALSE
+edg.trigraphs_allowed TRUE
+edg.type_info_in_namespace_std FALSE
+edg.typename_enabled TRUE
+edg.type_traits_helpers_enabled TRUE
+edg.uliterals_enabled TRUE
+edg.universal_character_names_allowed TRUE
+edg.use_microsoft_specialization_scope FALSE
+edg.use_name_mangling FALSE
+edg.use_nonstandard_for_init_scope TRUE
+edg.use_precompiled_header FALSE
+edg.use_predefined_macro_file FALSE
+edg.va_arg_returns_lvalue FALSE
+edg.va_copy_macro_allowed TRUE
+edg.va_list_in_std_namespace FALSE
+edg.value_initialization_enabled TRUE
+edg.variadic_macros_allowed TRUE
+edg.verbose_pch_messages FALSE
+edg.vla_deallocations_in_il FALSE
+edg.vla_enabled TRUE
+edg.warn_about_tail_padding_use FALSE
+edg.warning_on_for_init_difference FALSE
+edg.warning_on_non_template_friend TRUE
+edg.wchar_t_is_keyword FALSE
+edg.wr_gnu_extensions_enabled FALSE
+edg.wr_version 5400
+
+edg.targ_supports_x86_64 TRUE
+
+edg.p_do_nothing_cast_to_struct_or_union_type_allowed TRUE
+edg.p_defined_vtbl_decider_make_virtual_functions_needed TRUE
+edg.p_accept_type_with_flexible_array_member_as_array_element TRUE
+edg.p_white_space_after_line_spliter_allowed TRUE
+
+# asm related options:
+edg.p_parenthesized_asm_allowed TRUE
+edg.p_asm_name_allowed TRUE
+edg.p_asm_qualifiers_allowed TRUE
+edg.p_asm_block_allowed FALSE
+edg.p_asm_function_allowed FALSE
+edg.p_asm_line_allowed FALSE
+edg.p_asm_volatile_function_allowed FALSE
+edg.p_asm_macro_allowed FALSE
+edg.p_asm_goto_allowed TRUE
+edg.recognize_asm_pragmas FALSE
+
+edg.p_skip_system_predefined_macros TRUE
+edg.p_non_const_offsetof_subscript_allowed TRUE
+edg.p_member_prototype_instantiation_strings FALSE
+edg.p_extended_integral_constant_expressions_allowed TRUE
+edg.p_pack_pragma_is_ignored FALSE
+edg.p_pack_pragma_zero_arg_means_default TRUE
+edg.p_gcc_builtin_varargs TRUE
+# for qcc compilers x86 cc attributes seems to be ignored for non-x86 targets, but
+# currently there is no good way to configure it: 
+edg.p_x86_calling_convention_gnu_attributes_ignored TRUE
+
+edgtk.compilerConfigVersion 100402
+
+edg.error_threshold es_discretionary_error
+edgtk.suppressError cannot_redef_predef_macro
+edgtk.suppressError extra_text_in_pp_directive
+
+edgtk.optionAlias option=w value=--edg.error_threshold=es_discretionary_error
+edgtk.optionConfig name=extra-linker-option= prefix=-- params=1 concat=true tags=linker
+edgtk.optionConfig name=cpptest_cpp_file prefix=-- params=1 casesensitive=false tags=cppfile
+edgtk.optionConfig name=cpptest_c_file prefix=-- params=1 casesensitive=false tags=cfile
+
+edgtk.optionFilter tag=preprocessor_only remove=true for=instrumentation
+edgtk.optionFilter tag=warning-to-error remove=true for=instrumentation
+edgtk.optionFilter tag=enable-warning remove=true for=instrumentation
+edgtk.optionFilter tag=change-warning-level remove=true for=instrumentation
+edgtk.optionFilter tag=set-warning-level remove=true for=instrumentation
+
+edgtk.optionFilter tag=create-pch-file remove=true for=preprocessing
+edgtk.optionFilter tag=create-pch-file remove=true for=instrumentation
+edgtk.optionFilter tag=use-pch-file remove=true for=preprocessing
+edgtk.optionFilter tag=use-pch-file remove=true for=instrumentation
+
+#edgtk.optionFilter tag=ignore remove=true
+
+edgtk.cFileExtension c
+edgtk.cppFileExtension cpp
+edgtk.cppFileExtension cc
+edgtk.cppFileExtension cxx
+edgtk.cppFileExtension C
+edgtk.cppFileExtension CPP
+edgtk.cppFileExtension CC
+edgtk.cppFileExtension CXX
+edgtk.extensionsAreCaseSensitive TRUE
+
+edgtk.builtInMacroToCheck __STDC__
+edgtk.builtInMacroToCheck __STDC_VERSION__
+edgtk.builtInMacroToCheck __cplusplus
+edgtk.builtInMacroToCheck _WIN32
+edgtk.builtInMacroToCheck _MSC_VER
+edgtk.builtInMacroToCheck __CYGWIN__
+edgtk.builtInMacroToCheck __CYGWIN32__
+edgtk.builtInMacroToCheck __EXTENSIONS__
+edgtk.builtInMacroToCheck _XOPEN_SOURCE
+edgtk.builtInMacroToCheck __OPTIMIZE__
+
+edgtk.builtInMacroToCheck _ATL_VER
+edgtk.builtInMacroToCheck _CHAR_UNSIGNED
+edgtk.builtInMacroToCheck __CLR_VER
+edgtk.builtInMacroToCheck __cplusplus_cli
+edgtk.builtInMacroToCheck _CPPLIB_VER
+edgtk.builtInMacroToCheck _CPPRTTI
+edgtk.builtInMacroToCheck _CPPUNWIND
+edgtk.builtInMacroToCheck _DEBUG
+edgtk.builtInMacroToCheck _DLL
+edgtk.builtInMacroToCheck _INTEGRAL_MAX_BITS
+edgtk.builtInMacroToCheck _M_ALPHA
+edgtk.builtInMacroToCheck _M_CEE
+edgtk.builtInMacroToCheck _M_CEE_PURE
+edgtk.builtInMacroToCheck _M_CEE_SAFE
+edgtk.builtInMacroToCheck _M_IX86
+edgtk.builtInMacroToCheck _M_IA64
+edgtk.builtInMacroToCheck _M_IX86_FP
+edgtk.builtInMacroToCheck _M_MPPC
+edgtk.builtInMacroToCheck _M_MRX000
+edgtk.builtInMacroToCheck _M_PPC
+edgtk.builtInMacroToCheck _M_X64
+edgtk.builtInMacroToCheck _MANAGED
+edgtk.builtInMacroToCheck _MFC_VER
+edgtk.builtInMacroToCheck _MSC_EXTENSIONS
+edgtk.builtInMacroToCheck __MSVC_RUNTIME_CHECKS
+edgtk.builtInMacroToCheck _MT
+edgtk.builtInMacroToCheck _NATIVE_WCHAR_T_DEFINED
+edgtk.builtInMacroToCheck _OPENMP
+edgtk.builtInMacroToCheck _VC_NODEFAULTLIB
+edgtk.builtInMacroToCheck _WCHAR_T_DEFINED
+edgtk.builtInMacroToCheck _WIN64
+edgtk.builtInMacroToCheck _Wp64
+edgtk.builtInMacroToCheck __PLACEMENT_DELETE
+edgtk.builtInMacroToCheck _M_AMD64
+edgtk.builtInMacroToCheck _MSC_BUILD
+edgtk.builtInMacroToCheck _MSC_FULL_VER
+
+
+edgtk.builtInMacroToCheck __ARRAYNEW
+edgtk.builtInMacroToCheck _BOOL
+edgtk.builtInMacroToCheck __BUILTIN_VA_ARG_INCR
+edgtk.builtInMacroToCheck __sun
+edgtk.builtInMacroToCheck sun
+edgtk.builtInMacroToCheck __SUNPRO_CC
+edgtk.builtInMacroToCheck __SUNPRO_CC_COMPAT
+edgtk.builtInMacroToCheck __SUN_PREFETCH
+edgtk.builtInMacroToCheck SVR4
+edgtk.builtInMacroToCheck __unix
+edgtk.builtInMacroToCheck unix
+edgtk.builtInMacroToCheck __sparc
+edgtk.builtInMacroToCheck sparc
+edgtk.builtInMacroToCheck __i386
+edgtk.builtInMacroToCheck i386
+edgtk.builtInMacroToCheck _WCHAR_T
+edgtk.builtInMacroToCheck __VEC__
+edgtk.builtInMacroToCheck __EXCEPTIONS
+edgtk.builtInMacroToCheck __CHAR_UNSIGNED__
+edgtk.builtInMacroToCheck __BIG_ENDIAN__
+edgtk.builtInMacroToCheck __ARRAY_OPERATORS
+edgtk.builtInMacroToCheck __PRAGMA_REDEFINE_EXTNAME
+
+# Wind River Compiler
+edgtk.builtInMacroToCheck __bool
+edgtk.builtInMacroToCheck __DCC__
+edgtk.builtInMacroToCheck __DCPLUSPLUS__
+edgtk.builtInMacroToCheck _DIAB_TOOL
+edgtk.builtInMacroToCheck __EABI__
+edgtk.builtInMacroToCheck __ETOA__
+edgtk.builtInMacroToCheck __ETOA_IMPLICIT_USING_STD
+edgtk.builtInMacroToCheck __ETOA_NAMESPACES
+edgtk.builtInMacroToCheck __hardfp
+edgtk.builtInMacroToCheck __LITTLE_ENDIAN__
+edgtk.builtInMacroToCheck __LDBL__
+edgtk.builtInMacroToCheck __nofp
+edgtk.builtInMacroToCheck __RTTI
+edgtk.builtInMacroToCheck __SIGNED_CHARS__
+edgtk.builtInMacroToCheck __softfp
+edgtk.builtInMacroToCheck __STRICT_ANSI__
+edgtk.builtInMacroToCheck __VERSION__
+edgtk.builtInMacroToCheck __VERSION_NUMBER__
+edgtk.builtInMacroToCheck __wchar_t
+
+# Wind River Compiler - target flags
+edgtk.builtInMacroToCheck __arm
+edgtk.builtInMacroToCheck __THUMB__
+edgtk.builtInMacroToCheck __ace
+edgtk.builtInMacroToCheck __coldfire
+edgtk.builtInMacroToCheck m68k
+edgtk.builtInMacroToCheck mc68k
+edgtk.builtInMacroToCheck __m68k
+edgtk.builtInMacroToCheck __mips
+edgtk.builtInMacroToCheck __mips__
+edgtk.builtInMacroToCheck __mips16
+edgtk.builtInMacroToCheck __mips16__
+edgtk.builtInMacroToCheck __ppc
+edgtk.builtInMacroToCheck __sh
+# edgtk.builtInMacroToCheck __sparc
+edgtk.builtInMacroToCheck __sparclite
+# edgtk.builtInMacroToCheck __386
+
+
+# ARM RealView Compiler
+edgtk.builtInMacroToCheck __arm__
+edgtk.builtInMacroToCheck __ARMCC_VERSION
+edgtk.builtInMacroToCheck __ARM_NEON__
+edgtk.builtInMacroToCheck __APCS_ADSABI
+edgtk.builtInMacroToCheck __APCS_INTERWORK
+edgtk.builtInMacroToCheck __APCS_ROPI
+edgtk.builtInMacroToCheck __APCS_RWPI
+edgtk.builtInMacroToCheck __APCS_FPIC
+# edgtk.builtInMacroToCheck __BASE_FILE__ # Do not test - will always expand to path to temporary file
+edgtk.builtInMacroToCheck __BIG_ENDIAN
+edgtk.builtInMacroToCheck __CC_ARM
+edgtk.builtInMacroToCheck __DATE__
+edgtk.builtInMacroToCheck __EDG__
+edgtk.builtInMacroToCheck __EDG_IMPLICIT_USING_STD
+edgtk.builtInMacroToCheck __EDG_VERSION__
+edgtk.builtInMacroToCheck __FEATURE_SIGNED_CHAR
+edgtk.builtInMacroToCheck __FP_FAST
+edgtk.builtInMacroToCheck __FP_FENV_EXCEPTIONS
+edgtk.builtInMacroToCheck __FP_FENV_ROUNDING
+edgtk.builtInMacroToCheck __FP_IEEE
+edgtk.builtInMacroToCheck __FP_INEXACT_EXCEPTION
+edgtk.builtInMacroToCheck __GNUC__
+edgtk.builtInMacroToCheck __GNUC_MINOR__
+edgtk.builtInMacroToCheck __GNUG__
+edgtk.builtInMacroToCheck __IMPLICIT_INCLUDE
+edgtk.builtInMacroToCheck __INTMAX_TYPE__
+edgtk.builtInMacroToCheck __MODULE__
+edgtk.builtInMacroToCheck __MULTIFILE
+edgtk.builtInMacroToCheck __NO_INLINE__
+edgtk.builtInMacroToCheck __OPTIMISE_LEVEL
+edgtk.builtInMacroToCheck __OPTIMISE_SPACE
+edgtk.builtInMacroToCheck __OPTIMISE_TIME
+edgtk.builtInMacroToCheck __OPTIMIZE_SIZE__
+edgtk.builtInMacroToCheck __sizeof_int
+edgtk.builtInMacroToCheck __sizeof_long
+edgtk.builtInMacroToCheck __sizeof_ptr
+edgtk.builtInMacroToCheck __SOFTFP__
+edgtk.builtInMacroToCheck __TARGET_ARCH_ARM
+edgtk.builtInMacroToCheck __TARGET_ARCH_THUMB
+edgtk.builtInMacroToCheck __TARGET_FEATURE_DOUBLEWORD
+edgtk.builtInMacroToCheck __TARGET_FEATURE_DSPMUL
+edgtk.builtInMacroToCheck __TARGET_FEATURE_MULTIPLY
+edgtk.builtInMacroToCheck __TARGET_FEATURE_DIVIDE
+edgtk.builtInMacroToCheck __TARGET_FEATURE_MULTIPROCESSING
+edgtk.builtInMacroToCheck __TARGET_FEATURE_NEON
+edgtk.builtInMacroToCheck __TARGET_FEATURE_THUMB
+edgtk.builtInMacroToCheck __TARGET_FPU_NONE
+edgtk.builtInMacroToCheck __TARGET_FPU_VFP
+edgtk.builtInMacroToCheck __TARGET_FPU_SOFTVFP
+edgtk.builtInMacroToCheck __TARGET_FPU_SOFTVFP_VFPV2
+edgtk.builtInMacroToCheck __TARGET_FPU_SOFTVFP_VFPV3
+edgtk.builtInMacroToCheck __TARGET_PROFILE_A
+edgtk.builtInMacroToCheck __TARGET_PROFILE_R
+edgtk.builtInMacroToCheck __TARGET_PROFILE_M
+edgtk.builtInMacroToCheck __thumb__
+edgtk.builtInMacroToCheck __WINNT_TYPE__
+
+# ARM DS-5 Compiler
+edgtk.builtInMacroToCheck __CFRONT_LIKE
+edgtk.builtInMacroToCheck __thumb
+edgtk.builtInMacroToCheck __APCS_NOSWST
+edgtk.builtInMacroToCheck __APCS_REENT
+edgtk.builtInMacroToCheck __APCS_32
+edgtk.builtInMacroToCheck __APCS_NOFP
+edgtk.builtInMacroToCheck __APCS_FPREGARGS
+edgtk.builtInMacroToCheck __DIALECT_FUSSY
+edgtk.builtInMacroToCheck __DIALECT_PCC
+edgtk.builtInMacroToCheck __TARGET_FEATURE_HALFWORD
+edgtk.builtInMacroToCheck __CLK_TCK
+
+
+edgtk.builtInMacroToCheck _ICC
+edgtk.builtInMacroToCheck __CC_NORCROFT
+edgtk.builtInMacroToCheck __CORE__
+edgtk.builtInMacroToCheck __FULL_DEBUG__
+edgtk.builtInMacroToCheck __ICC_VERSION_NUMBER__
+edgtk.builtInMacroToCheck __ICC_VERSION_STRING__
+edgtk.builtInMacroToCheck __SIGNED_CHAR__
+
+# XL compiler
+edgtk.builtInMacroToCheck DFP_BIASED_EXPONENT_FINITE
+edgtk.builtInMacroToCheck DFP_BIASED_EXPONENT_INFINITY
+edgtk.builtInMacroToCheck DFP_BIASED_EXPONENT_QNAN
+edgtk.builtInMacroToCheck DFP_BIASED_EXPONENT_SNAN
+edgtk.builtInMacroToCheck DFP_PPC1_ACCORDING_TO_FPSCR
+edgtk.builtInMacroToCheck DFP_PPC1_ROUND_TOWARD_ZERO
+edgtk.builtInMacroToCheck DFP_PPC1_ROUND_TO_NEAREST_WITH_TIES_TOWARD_ZERO
+edgtk.builtInMacroToCheck DFP_PPC1_ROUND_TO_NEAREST_WITH_TIES_TO_EVEN
+edgtk.builtInMacroToCheck DFP_PPC2_ROUND_AWAY_FROM_ZERO
+edgtk.builtInMacroToCheck DFP_PPC2_ROUND_TOWARD_NEGATIVE_INFINITY
+edgtk.builtInMacroToCheck DFP_PPC2_ROUND_TOWARD_POSITIVE_INFINITY
+edgtk.builtInMacroToCheck DFP_PPC2_ROUND_TO_NEAREST_WITH_TIES_TOWARD_ZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_INFINITY
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_NORMAL
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_QUIET_NAN
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_SIGNALING_NAN
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_SUBNORMAL
+edgtk.builtInMacroToCheck DFP_PPC_DATA_CLASS_ZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_INFINITY_OR_NAN
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_NONEXTREME_EXP_LEFTMOST_NONZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_NONEXTREME_EXP_LEFTMOST_ZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_NONZERO_LEFTMOST_DIGIT_NONEXTREME_EXPONENT
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_NONZERO_WITH_EXTREME_EXPONENT
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_SAFE_NONZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_SAFE_ZERO
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_SPECIAL
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_SUBNORMAL_OR_EXTREME_EXPONENT
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_ZERO_WITH_EXTREME_EXPONENT
+edgtk.builtInMacroToCheck DFP_PPC_DATA_GROUP_ZERO_WITH_NONEXTREME_EXPONENT
+edgtk.builtInMacroToCheck DFP_PPC_DATA_MATCH_MASK
+edgtk.builtInMacroToCheck DFP_PPC_DATA_NEGATIVE_MASK
+edgtk.builtInMacroToCheck DFP_PPC_DATA_NEGATIVE_MATCH
+edgtk.builtInMacroToCheck DFP_PPC_DATA_NEGATIVE_NO_MATCH
+edgtk.builtInMacroToCheck DFP_PPC_DATA_POSITIVE_MATCH
+edgtk.builtInMacroToCheck DFP_PPC_DATA_POSITIVE_NO_MATCH
+edgtk.builtInMacroToCheck DFP_ROUND_AWAY_FROM_ZERO
+edgtk.builtInMacroToCheck DFP_ROUND_TOWARD_NEGATIVE_INFINITY
+edgtk.builtInMacroToCheck DFP_ROUND_TOWARD_POSITIVE_INFINITY
+edgtk.builtInMacroToCheck DFP_ROUND_TOWARD_ZERO
+edgtk.builtInMacroToCheck DFP_ROUND_TO_NEAREST_WITH_TIES_AWAY_FROM_ZERO
+edgtk.builtInMacroToCheck DFP_ROUND_TO_NEAREST_WITH_TIES_TOWARD_ZERO
+edgtk.builtInMacroToCheck DFP_ROUND_TO_NEAREST_WITH_TIES_TO_EVEN
+edgtk.builtInMacroToCheck DFP_ROUND_TO_PREPARE_FOR_SHORTER_PRECISION
+edgtk.builtInMacroToCheck DFP_ROUND_USING_CURRENT_MODE
+edgtk.builtInMacroToCheck _AIX
+edgtk.builtInMacroToCheck _AIX32
+edgtk.builtInMacroToCheck _AIX41
+edgtk.builtInMacroToCheck _AIX43
+edgtk.builtInMacroToCheck _AIX50
+edgtk.builtInMacroToCheck _AIX51
+edgtk.builtInMacroToCheck _AIX52
+edgtk.builtInMacroToCheck _AIX53
+edgtk.builtInMacroToCheck _AIX61
+edgtk.builtInMacroToCheck _ARCH_COM
+edgtk.builtInMacroToCheck _ARCH_PPC
+edgtk.builtInMacroToCheck _ARCH_PPC64
+edgtk.builtInMacroToCheck _ARCH_PPC64GR
+edgtk.builtInMacroToCheck _ARCH_PPC64GRSQ
+edgtk.builtInMacroToCheck _ARCH_PPC64V
+edgtk.builtInMacroToCheck _ARCH_PPCGR
+edgtk.builtInMacroToCheck _ARCH_PWR3
+edgtk.builtInMacroToCheck _ARCH_PWR4
+edgtk.builtInMacroToCheck _ARCH_PWR5
+edgtk.builtInMacroToCheck _ARCH_PWR5X
+edgtk.builtInMacroToCheck _ARCH_PWR6
+edgtk.builtInMacroToCheck _CHAR_SIGNED
+edgtk.builtInMacroToCheck _EXT
+edgtk.builtInMacroToCheck _IBMR2
+edgtk.builtInMacroToCheck _IBMSMP
+edgtk.builtInMacroToCheck _ILP32
+edgtk.builtInMacroToCheck _LONG_LONG
+edgtk.builtInMacroToCheck _LP64
+edgtk.builtInMacroToCheck _MI_BUILTIN
+edgtk.builtInMacroToCheck _POWER
+edgtk.builtInMacroToCheck __64BIT__
+edgtk.builtInMacroToCheck __ALIGN
+edgtk.builtInMacroToCheck __ALTIVEC__
+edgtk.builtInMacroToCheck __ANSI__
+edgtk.builtInMacroToCheck __BOOL__
+edgtk.builtInMacroToCheck __C99_BOOL
+edgtk.builtInMacroToCheck __C99_COMPLEX
+edgtk.builtInMacroToCheck __C99_COMPOUND_LITERAL
+edgtk.builtInMacroToCheck __C99_CPLUSCMT
+edgtk.builtInMacroToCheck __C99_DESIGNATED_INITIALIZER
+edgtk.builtInMacroToCheck __C99_DUP_TYPE_QUALIFIER
+edgtk.builtInMacroToCheck __C99_EMPTY_MACRO_ARGUMENTS
+edgtk.builtInMacroToCheck __C99_FLEXIBLE_ARRAY_MEMBER
+edgtk.builtInMacroToCheck __C99_HEX_FLOAT_CONST
+edgtk.builtInMacroToCheck __C99_INLINE
+edgtk.builtInMacroToCheck __C99_LLONG
+edgtk.builtInMacroToCheck __C99_MACRO_WITH_VA_ARGS
+edgtk.builtInMacroToCheck __C99_MAX_LINE_NUMBER
+edgtk.builtInMacroToCheck __C99_MIXED_DECL_AND_CODE
+edgtk.builtInMacroToCheck __C99_MIXED_STRING_CONCAT
+edgtk.builtInMacroToCheck __C99_NON_CONST_AGGR_INITIALIZER
+edgtk.builtInMacroToCheck __C99_NON_LVALUE_ARRAY_SUB
+edgtk.builtInMacroToCheck __C99_PRAGMA_OPERATOR
+edgtk.builtInMacroToCheck __C99_REQUIRE_FUNC_DECL
+edgtk.builtInMacroToCheck __C99_RESTRICT
+edgtk.builtInMacroToCheck __C99_STATIC_ARRAY_SIZE
+edgtk.builtInMacroToCheck __C99_STD_PRAGMAS
+edgtk.builtInMacroToCheck __C99_TGMATH
+edgtk.builtInMacroToCheck __C99_UCN
+edgtk.builtInMacroToCheck __C99_VARIABLE_LENGTH_ARRAY
+edgtk.builtInMacroToCheck __C99_VAR_LEN_ARRAY
+edgtk.builtInMacroToCheck __C99__FUNC__
+edgtk.builtInMacroToCheck __CHAR_SIGNED__
+edgtk.builtInMacroToCheck __CLASSIC__
+edgtk.builtInMacroToCheck __DBCS__
+edgtk.builtInMacroToCheck __DEBUG_ALLOC__
+edgtk.builtInMacroToCheck __DIGRAPHS__
+edgtk.builtInMacroToCheck __EXTABI__
+edgtk.builtInMacroToCheck __EXTENDED__
+edgtk.builtInMacroToCheck __FENCE
+edgtk.builtInMacroToCheck __GCC_PROTO_OVERRIDES_KNR_DEF
+edgtk.builtInMacroToCheck __HHW_BIG_ENDIAN__
+edgtk.builtInMacroToCheck __HHW_RS6000__
+edgtk.builtInMacroToCheck __HOS_AIX__
+edgtk.builtInMacroToCheck __IBMCPP__
+edgtk.builtInMacroToCheck __IBMC__
+edgtk.builtInMacroToCheck __IBM_ALIGNOF__
+edgtk.builtInMacroToCheck __IBM_ALTIVEC_SUPPORT
+edgtk.builtInMacroToCheck __IBM_ATTRIBUTES
+edgtk.builtInMacroToCheck __IBM_COMPUTED_GOTO
+edgtk.builtInMacroToCheck __IBM_DFP_SW_EMULATION__
+edgtk.builtInMacroToCheck __IBM_DFP__
+edgtk.builtInMacroToCheck __IBM_DOLLAR_IN_ID
+edgtk.builtInMacroToCheck __IBM_EXTENSION_KEYWORD
+edgtk.builtInMacroToCheck __IBM_GCC_ASM
+edgtk.builtInMacroToCheck __IBM_GCC__INLINE__
+edgtk.builtInMacroToCheck __IBM_GENERALIZED_LVALUE
+edgtk.builtInMacroToCheck __IBM_INCLUDE_NEXT
+edgtk.builtInMacroToCheck __IBM_LABEL_VALUE
+edgtk.builtInMacroToCheck __IBM_LOCAL_LABEL
+edgtk.builtInMacroToCheck __IBM_MACRO_WITH_VA_ARGS
+edgtk.builtInMacroToCheck __IBM_NESTED_FUNCTION
+edgtk.builtInMacroToCheck __IBM_PP_PREDICATE
+edgtk.builtInMacroToCheck __IBM_PP_WARNING
+edgtk.builtInMacroToCheck __IBM_REGISTER_VARS
+edgtk.builtInMacroToCheck __IBM_STDCPP_ASM
+edgtk.builtInMacroToCheck __IBM_UTF_LITERAL
+edgtk.builtInMacroToCheck __IBM__ALIGN
+edgtk.builtInMacroToCheck __IBM__ALIGNOF__
+edgtk.builtInMacroToCheck __IBM__IMAG__
+edgtk.builtInMacroToCheck __IBM__REAL__
+edgtk.builtInMacroToCheck __IBM__RESTRICT__
+edgtk.builtInMacroToCheck __IBM__TYPEOF__
+edgtk.builtInMacroToCheck __IGNERRNO__
+edgtk.builtInMacroToCheck __ILP32__
+edgtk.builtInMacroToCheck __INITAUTO_W__
+edgtk.builtInMacroToCheck __INITAUTO__
+edgtk.builtInMacroToCheck __LIBANSI__
+edgtk.builtInMacroToCheck __LONGDOUBLE128
+edgtk.builtInMacroToCheck __LONGDOUBLE64
+edgtk.builtInMacroToCheck __LP64__
+edgtk.builtInMacroToCheck __MATH__
+edgtk.builtInMacroToCheck __NO_RTTI__
+edgtk.builtInMacroToCheck __OBJECT_MODEL_CLASSIC__
+edgtk.builtInMacroToCheck __OBJECT_MODEL_COMPAT__
+edgtk.builtInMacroToCheck __OBJECT_MODEL_IBM__
+edgtk.builtInMacroToCheck __PPC
+edgtk.builtInMacroToCheck __PPC__
+edgtk.builtInMacroToCheck __RTTI_ALL__
+edgtk.builtInMacroToCheck __RTTI_DYNAMIC_CAST__
+edgtk.builtInMacroToCheck __RTTI_TYPE_INFO__
+edgtk.builtInMacroToCheck __SAA_L2__
+edgtk.builtInMacroToCheck __SAA__
+edgtk.builtInMacroToCheck __SIZE_TYPE__
+edgtk.builtInMacroToCheck __STDC_HOSTED__
+edgtk.builtInMacroToCheck __STR__
+edgtk.builtInMacroToCheck __TEMPINC__
+edgtk.builtInMacroToCheck __THW_BIG_ENDIAN__
+edgtk.builtInMacroToCheck __THW_PPC__
+edgtk.builtInMacroToCheck __THW_RS6000__
+edgtk.builtInMacroToCheck __TOS_AIX__
+edgtk.builtInMacroToCheck __V6ALIGN__
+edgtk.builtInMacroToCheck __XLC121__
+edgtk.builtInMacroToCheck __XLC13__
+edgtk.builtInMacroToCheck __XLC_BUILTIN_VAARG__
+edgtk.builtInMacroToCheck __XPLINK_CALLBACK__
+edgtk.builtInMacroToCheck __alignof
+edgtk.builtInMacroToCheck __const
+edgtk.builtInMacroToCheck __const__
+edgtk.builtInMacroToCheck __powerpc
+edgtk.builtInMacroToCheck __powerpc__
+edgtk.builtInMacroToCheck __ppc__
+edgtk.builtInMacroToCheck __signed
+edgtk.builtInMacroToCheck __signed__
+edgtk.builtInMacroToCheck __typeof
+edgtk.builtInMacroToCheck __unix__
+edgtk.builtInMacroToCheck __volatile
+edgtk.builtInMacroToCheck __volatile__
+edgtk.builtInMacroToCheck __xlC__
+edgtk.builtInMacroToCheck __xlc__
+edgtk.builtInMacroToCheck alloca
+# V11.1
+edgtk.builtInMacroToCheck _AIX71
+edgtk.builtInMacroToCheck __IBMCPP_EXTERN_TEMPLATE
+edgtk.builtInMacroToCheck __IBM_CHAR16_T__
+edgtk.builtInMacroToCheck __IBM_CHAR32_T__
+edgtk.builtInMacroToCheck __xlC_ver__
+# below is real defined=defined macro dumped in C++ mode we have problems with
+#edgtk.builtInMacroToCheck defined
+
+# Texas Instruments
+
+edgtk.builtInMacroToCheck __TI_COMPILER_VERSION__
+edgtk.builtInMacroToCheck __TMS320C28XX__
+edgtk.builtInMacroToCheck _dsp
+edgtk.builtInMacroToCheck _TMS320C25
+edgtk.builtInMacroToCheck _TMS320C50
+edgtk.builtInMacroToCheck _TMS320C2XX
+edgtk.builtInMacroToCheck _INLINE
+edgtk.builtInMacroToCheck __LARGE_MODEL__
+edgtk.builtInMacroToCheck __TMS320C28XX_FPU32__
+edgtk.builtInMacroToCheck __TMS320C28XX_FPU64__
+edgtk.builtInMacroToCheck _TI_C6X_TESLA
+edgtk.builtInMacroToCheck _TMS320C6200
+edgtk.builtInMacroToCheck _TMS320C6400
+edgtk.builtInMacroToCheck _TMS320C6400_PLUS
+edgtk.builtInMacroToCheck _TMS320C6600
+edgtk.builtInMacroToCheck _TMS320C6700
+edgtk.builtInMacroToCheck _TMS320C6740
+edgtk.builtInMacroToCheck _TMS320C6700_PLUS
+edgtk.builtInMacroToCheck _BIG_ENDIAN
+edgtk.builtInMacroToCheck _LITTLE_ENDIAN
+edgtk.builtInMacroToCheck __MSP430X461X__
+edgtk.builtInMacroToCheck __LARGE_CODE_MODEL__
+edgtk.builtInMacroToCheck __LARGE_DATA_MODEL__
+edgtk.builtInMacroToCheck __signed_chars__
+edgtk.builtInMacroToCheck __unsigned_chars__
+edgtk.builtInMacroToCheck _C_MODE
+edgtk.builtInMacroToCheck _FAR_MODE
+edgtk.builtInMacroToCheck __TI_32BIT_LONG__
+edgtk.builtInMacroToCheck __TI_40BIT_LONG__
+edgtk.builtInMacroToCheck __TI_EABI__
+edgtk.builtInMacroToCheck __TI_GNU_ATTIBUTE_SUPPORT__
+edgtk.builtInMacroToCheck __TI_STRICT_ANSI_MODE__
+
+
+# eCos Centric (Altea nios2)
+
+edgtk.builtInMacroToCheck __REGISTER_PREFIX__
+edgtk.builtInMacroToCheck __USER_LABEL_PREFIX__
+edgtk.builtInMacroToCheck __USING_SJLJ_EXCEPTIONS__
+edgtk.builtInMacroToCheck nios2_little_endian
+edgtk.builtInMacroToCheck __nios2_little_endian
+edgtk.builtInMacroToCheck __nios2_little_endian__
+edgtk.builtInMacroToCheck __ELF__
+edgtk.builtInMacroToCheck __FINITE_MATH_ONLY__
+edgtk.builtInMacroToCheck __CHAR_BIT__
+edgtk.builtInMacroToCheck __DBL_DENORM_MIN__
+edgtk.builtInMacroToCheck __DBL_DIG__
+edgtk.builtInMacroToCheck __DBL_EPSILON__
+edgtk.builtInMacroToCheck __DBL_HAS_INFINITY__
+edgtk.builtInMacroToCheck __DBL_HAS_QUIET_NAN__
+edgtk.builtInMacroToCheck __DBL_MANT_DIG__
+edgtk.builtInMacroToCheck __DBL_MAX__
+edgtk.builtInMacroToCheck __DBL_MAX_10_EXP__
+edgtk.builtInMacroToCheck __DBL_MAX_EXP__
+edgtk.builtInMacroToCheck __DBL_MIN__
+edgtk.builtInMacroToCheck __DBL_MIN_10_EXP__
+edgtk.builtInMacroToCheck __DBL_MIN_EXP__
+edgtk.builtInMacroToCheck __DECIMAL_DIG__
+edgtk.builtInMacroToCheck __FLT_DENORM_MIN__
+edgtk.builtInMacroToCheck __FLT_DIG__
+edgtk.builtInMacroToCheck __FLT_EPSILON__
+edgtk.builtInMacroToCheck __FLT_EVAL_METHOD__
+edgtk.builtInMacroToCheck __FLT_HAS_INFINITY__
+edgtk.builtInMacroToCheck __FLT_HAS_QUIET_NAN__
+edgtk.builtInMacroToCheck __FLT_MANT_DIG__
+edgtk.builtInMacroToCheck __FLT_MAX__
+edgtk.builtInMacroToCheck __FLT_MAX_10_EXP__
+edgtk.builtInMacroToCheck __FLT_MAX_EXP__
+edgtk.builtInMacroToCheck __FLT_MIN__
+edgtk.builtInMacroToCheck __FLT_MIN_10_EXP__
+edgtk.builtInMacroToCheck __FLT_MIN_EXP__
+edgtk.builtInMacroToCheck __FLT_RADIX__
+edgtk.builtInMacroToCheck __GNUC_PATCHLEVEL__
+edgtk.builtInMacroToCheck __GXX_ABI_VERSION
+edgtk.builtInMacroToCheck __INT_MAX__
+edgtk.builtInMacroToCheck __LDBL_DENORM_MIN__
+edgtk.builtInMacroToCheck __LDBL_DIG__
+edgtk.builtInMacroToCheck __LDBL_EPSILON__
+edgtk.builtInMacroToCheck __LDBL_HAS_INFINITY__
+edgtk.builtInMacroToCheck __LDBL_HAS_QUIET_NAN__
+edgtk.builtInMacroToCheck __LDBL_MANT_DIG__
+edgtk.builtInMacroToCheck __LDBL_MAX__
+edgtk.builtInMacroToCheck __LDBL_MAX_10_EXP__
+edgtk.builtInMacroToCheck __LDBL_MAX_EXP__
+edgtk.builtInMacroToCheck __LDBL_MIN__
+edgtk.builtInMacroToCheck __LDBL_MIN_10_EXP__
+edgtk.builtInMacroToCheck __LDBL_MIN_EXP__
+edgtk.builtInMacroToCheck __LONG_LONG_MAX__
+edgtk.builtInMacroToCheck __LONG_MAX__
+edgtk.builtInMacroToCheck __PTRDIFF_TYPE__
+edgtk.builtInMacroToCheck __SCHAR_MAX__
+edgtk.builtInMacroToCheck __SHRT_MAX__
+edgtk.builtInMacroToCheck __WCHAR_MAX__
+edgtk.builtInMacroToCheck __WCHAR_TYPE__
+edgtk.builtInMacroToCheck __WINT_TYPE__
+
+
+# Renesas HEW shc
+edgtk.builtInMacroToCheck _SH
+edgtk.builtInMacroToCheck _SH1
+edgtk.builtInMacroToCheck _SH2
+edgtk.builtInMacroToCheck _SH2E
+edgtk.builtInMacroToCheck _SH2A
+edgtk.builtInMacroToCheck _SH2AFPU
+edgtk.builtInMacroToCheck _SH2DSP
+edgtk.builtInMacroToCheck _SH3
+edgtk.builtInMacroToCheck _SH3DSP
+edgtk.builtInMacroToCheck _SH4
+edgtk.builtInMacroToCheck _SH4A
+edgtk.builtInMacroToCheck _SH4ALDSP
+edgtk.builtInMacroToCheck _DSPC
+
+
+# Renesas RX Compiler
+edgtk.builtInMacroToCheck __AUTO_ENUM
+edgtk.builtInMacroToCheck __BIG
+edgtk.builtInMacroToCheck __BITLEFT
+edgtk.builtInMacroToCheck __BITRIGHT
+edgtk.builtInMacroToCheck __CCRX__
+edgtk.builtInMacroToCheck __DBL4
+edgtk.builtInMacroToCheck __DBL8
+edgtk.builtInMacroToCheck __DOFF
+edgtk.builtInMacroToCheck __DON
+edgtk.builtInMacroToCheck __FPU
+edgtk.builtInMacroToCheck __FUNCTION_LIB
+edgtk.builtInMacroToCheck __INT_SHORT
+edgtk.builtInMacroToCheck __INTRINSIC_LIB
+edgtk.builtInMacroToCheck __LIT
+edgtk.builtInMacroToCheck __PIC
+edgtk.builtInMacroToCheck __PID
+edgtk.builtInMacroToCheck __RENESAS__
+edgtk.builtInMacroToCheck __RENESAS_VERSION__
+edgtk.builtInMacroToCheck __RON
+edgtk.builtInMacroToCheck __ROZ
+edgtk.builtInMacroToCheck __RX
+edgtk.builtInMacroToCheck __RX200
+edgtk.builtInMacroToCheck __RX600
+edgtk.builtInMacroToCheck __RXV1
+edgtk.builtInMacroToCheck __RXV2
+edgtk.builtInMacroToCheck __SBIT
+edgtk.builtInMacroToCheck __SCHAR
+edgtk.builtInMacroToCheck __UBIT
+edgtk.builtInMacroToCheck __UCHAR
+
+
+# TASKING 80C196
+edgtk.builtInMacroToCheck _16_BITS_
+edgtk.builtInMacroToCheck _24_BITS_
+edgtk.builtInMacroToCheck _ARCHITECTURE_
+edgtk.builtInMacroToCheck _C196_
+edgtk.builtInMacroToCheck _DEBUG_
+edgtk.builtInMacroToCheck _DIAGNOSTIC_
+edgtk.builtInMacroToCheck _FAR_CODE_
+edgtk.builtInMacroToCheck _FAR_CONST_
+edgtk.builtInMacroToCheck _FAR_DATA_
+edgtk.builtInMacroToCheck _FUNCS_H_
+edgtk.builtInMacroToCheck _HAS_PTS_
+edgtk.builtInMacroToCheck _OMF96_VERSION_
+edgtk.builtInMacroToCheck _OPTIMIZE_
+edgtk.builtInMacroToCheck _REGISTERS_
+edgtk.builtInMacroToCheck _SIGNEDCHAR_
+edgtk.builtInMacroToCheck _SFR_H_
+
+# tc166 (Altium TASKING classic compiler for C166/ST10):
+edgtk.builtInMacroToCheck _C166
+edgtk.builtInMacroToCheck _CP166
+edgtk.builtInMacroToCheck _MODEL
+
+# Microchip MPLAB C30 compilers for dsPIC architecture
+edgtk.builtInMacroToCheck __C30ELF
+edgtk.builtInMacroToCheck __C30ELF__
+edgtk.builtInMacroToCheck __dsPIC30ELF
+edgtk.builtInMacroToCheck __dsPIC30ELF__
+edgtk.builtInMacroToCheck __dsPIC30F__
+edgtk.builtInMacroToCheck __dsPIC30F2010__
+edgtk.builtInMacroToCheck __dsPIC33F__
+edgtk.builtInMacroToCheck __dsPIC33FJ06GS101__
+edgtk.builtInMacroToCheck __HAS_DSP__
+edgtk.builtInMacroToCheck __HAS_EEDATA__
+edgtk.builtInMacroToCheck __HAS_DMA__
+edgtk.builtInMacroToCheck __HAS_CODEGUARD__
+edgtk.builtInMacroToCheck __HAS_PMP__
+edgtk.builtInMacroToCheck __HAS_PMP_ENHANCED__
+edgtk.builtInMacroToCheck __HAS_EDS__
+edgtk.builtInMacroToCheck __C30
+edgtk.builtInMacroToCheck __CHAR_BIT__
+edgtk.builtInMacroToCheck dsPIC30
+edgtk.builtInMacroToCheck C30
+edgtk.builtInMacroToCheck __UINTMAX_TYPE__
+edgtk.builtInMacroToCheck __C30COFF
+edgtk.builtInMacroToCheck __BUILTIN_ITTYPE
+edgtk.builtInMacroToCheck C30COFF
+edgtk.builtInMacroToCheck dsPIC30COFF
+edgtk.builtInMacroToCheck __C30_VERSION__
+edgtk.builtInMacroToCheck __dsPIC30COFF__
+edgtk.builtInMacroToCheck __C30COFF__
+edgtk.builtInMacroToCheck __dsPIC30__
+edgtk.builtInMacroToCheck __C30__
+edgtk.builtInMacroToCheck __INTMAX_MAX__
+edgtk.builtInMacroToCheck __dsPIC30COFF
+edgtk.builtInMacroToCheck __dsPIC30
+
+# iccstm8 (IAR C/C++ compiler for STM8):
+edgtk.builtInMacroToCheck __ICCSTM8__
+edgtk.builtInMacroToCheck __STM8__
+edgtk.builtInMacroToCheck __BUILD_NUMBER__
+edgtk.builtInMacroToCheck __CODE_MODEL__
+edgtk.builtInMacroToCheck __DATA_MODEL__
+edgtk.builtInMacroToCheck __embedded_cplusplus
+edgtk.builtInMacroToCheck __iar_extended_embedded_cplusplus
+edgtk.builtInMacroToCheck __IAR_SYSTEMS_ICC__
+edgtk.builtInMacroToCheck __SUBVERSION__
+edgtk.builtInMacroToCheck __VER__
+edgtk.builtInMacroToCheck __EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE
+edgtk.builtInMacroToCheck __EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE
+edgtk.builtInMacroToCheck __EDG_ABI_CHANGES_FOR_RTTI
+edgtk.builtInMacroToCheck __EDG_ABI_COMPATIBILITY_VERSION
+edgtk.builtInMacroToCheck __EDG_ANSIC
+edgtk.builtInMacroToCheck __EDG_BSD
+edgtk.builtInMacroToCheck __EDG_CPP0X_IL_EXTENSIONS_SUPPORTED
+edgtk.builtInMacroToCheck __EDG_DELTA_TYPE
+edgtk.builtInMacroToCheck __EDG_IA64_ABI
+edgtk.builtInMacroToCheck __EDG_IA64_ABI_USE_INT_STATIC_INIT_GUARD
+edgtk.builtInMacroToCheck __EDG_IA64_ABI_USE_VARIANT_ARRAY_COOKIES
+edgtk.builtInMacroToCheck __EDG_IA64_ABI_VARIANT_CTORS_AND_DTORS_RETURN_THIS
+edgtk.builtInMacroToCheck __EDG_IA64_VTABLE_ENTRY_TYPE
+edgtk.builtInMacroToCheck __EDG_LOWER_VARIABLE_LENGTH_ARRAYS
+edgtk.builtInMacroToCheck __EDG_PTRDIFF_TYPE__
+edgtk.builtInMacroToCheck __EDG_SIZE_TYPE__
+edgtk.builtInMacroToCheck __EDG_SYSV
+edgtk.builtInMacroToCheck __EDG_TYPE_TRAITS_ENABLED
+edgtk.builtInMacroToCheck __EDG_VIRTUAL_FUNCTION_INDEX_TYPE
+edgtk.builtInMacroToCheck __IAR_COMPILERBASE__
+edgtk.builtInMacroToCheck __SMALL_CODE_MODEL__
+edgtk.builtInMacroToCheck __SMALL_DATA_MODEL__
+edgtk.builtInMacroToCheck __BOOL
+edgtk.builtInMacroToCheck __BOOL_TYPE__
+edgtk.builtInMacroToCheck __C99_BOOL__
+edgtk.builtInMacroToCheck __CHAR_ALIGN__
+edgtk.builtInMacroToCheck __CHAR_BITS__
+edgtk.builtInMacroToCheck __CHAR_MAX__
+edgtk.builtInMacroToCheck __CHAR_MIN__
+edgtk.builtInMacroToCheck __CHAR_SIZE__
+edgtk.builtInMacroToCheck __DOUBLE_ALIGN__
+edgtk.builtInMacroToCheck __DOUBLE_SIZE__
+edgtk.builtInMacroToCheck __FLOAT_ALIGN__
+edgtk.builtInMacroToCheck __FLOAT_SIZE__
+edgtk.builtInMacroToCheck __HAS_LOCATED_DECLARATION__
+edgtk.builtInMacroToCheck __HAS_LOCATED_WITH_INIT__
+edgtk.builtInMacroToCheck __HAS_WEAK__
+edgtk.builtInMacroToCheck __INT_ALIGN__
+edgtk.builtInMacroToCheck __INT_FAST16_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_FAST16_T_MAX__
+edgtk.builtInMacroToCheck __INT_FAST16_T_MIN__
+edgtk.builtInMacroToCheck __INT_FAST16_T_TYPE__
+edgtk.builtInMacroToCheck __INT_FAST32_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_FAST32_T_MAX__
+edgtk.builtInMacroToCheck __INT_FAST32_T_MIN__
+edgtk.builtInMacroToCheck __INT_FAST32_T_TYPE__
+edgtk.builtInMacroToCheck __INT_FAST8_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_FAST8_T_MAX__
+edgtk.builtInMacroToCheck __INT_FAST8_T_MIN__
+edgtk.builtInMacroToCheck __INT_FAST8_T_TYPE__
+edgtk.builtInMacroToCheck __INT_LEAST16_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_LEAST16_T_MAX__
+edgtk.builtInMacroToCheck __INT_LEAST16_T_MIN__
+edgtk.builtInMacroToCheck __INT_LEAST16_T_TYPE__
+edgtk.builtInMacroToCheck __INT_LEAST32_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_LEAST32_T_MAX__
+edgtk.builtInMacroToCheck __INT_LEAST32_T_MIN__
+edgtk.builtInMacroToCheck __INT_LEAST32_T_TYPE__
+edgtk.builtInMacroToCheck __INT_LEAST8_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT_LEAST8_T_MAX__
+edgtk.builtInMacroToCheck __INT_LEAST8_T_MIN__
+edgtk.builtInMacroToCheck __INT_LEAST8_T_TYPE__
+edgtk.builtInMacroToCheck __INT_SIZE__
+edgtk.builtInMacroToCheck __INT16_C_SUFFIX__
+edgtk.builtInMacroToCheck __INT16_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT16_T_MAX__
+edgtk.builtInMacroToCheck __INT16_T_MIN__
+edgtk.builtInMacroToCheck __INT16_T_TYPE__
+edgtk.builtInMacroToCheck __INT32_C_SUFFIX__
+edgtk.builtInMacroToCheck __INT32_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT32_T_MAX__
+edgtk.builtInMacroToCheck __INT32_T_MIN__
+edgtk.builtInMacroToCheck __INT32_T_TYPE__
+edgtk.builtInMacroToCheck __INT8_C_SUFFIX__
+edgtk.builtInMacroToCheck __INT8_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INT8_T_MAX__
+edgtk.builtInMacroToCheck __INT8_T_MIN__
+edgtk.builtInMacroToCheck __INT8_T_TYPE__
+edgtk.builtInMacroToCheck __INTMAX_C_SUFFIX__
+edgtk.builtInMacroToCheck __INTMAX_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INTMAX_T_MAX__
+edgtk.builtInMacroToCheck __INTMAX_T_MIN__
+edgtk.builtInMacroToCheck __INTMAX_T_TYPE__
+edgtk.builtInMacroToCheck __INTPTR_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __INTPTR_T_MAX__
+edgtk.builtInMacroToCheck __INTPTR_T_MIN__
+edgtk.builtInMacroToCheck __INTPTR_T_TYPE__
+edgtk.builtInMacroToCheck __JMP_BUF_ELEMENT_TYPE__
+edgtk.builtInMacroToCheck __JMP_BUF_NUM_ELEMENTS__
+edgtk.builtInMacroToCheck __LONG_ALIGN__
+edgtk.builtInMacroToCheck __LONG_DOUBLE_ALIGN__
+edgtk.builtInMacroToCheck __LONG_DOUBLE_SIZE__
+edgtk.builtInMacroToCheck __LONG_LONG_ALIGN__
+edgtk.builtInMacroToCheck __LONG_LONG_SIZE__
+edgtk.builtInMacroToCheck __LONG_SIZE__
+edgtk.builtInMacroToCheck __MEDIUM_CODE_MODEL__
+edgtk.builtInMacroToCheck __MEDIUM_DATA_MODEL__
+edgtk.builtInMacroToCheck __MULTIPLE_HEAPS__
+edgtk.builtInMacroToCheck __MULTIPLE_INHERITANCE__
+edgtk.builtInMacroToCheck __NAN_HAS_HIGH_MANTISSA_BIT_SET__
+edgtk.builtInMacroToCheck __PLAIN_INT_BITFIELD_IS_SIGNED__
+edgtk.builtInMacroToCheck __PTRDIFF_T_MAX__
+edgtk.builtInMacroToCheck __PTRDIFF_T_MIN__
+edgtk.builtInMacroToCheck __PTRDIFF_T_TYPE__
+edgtk.builtInMacroToCheck __SHORT_ALIGN__
+edgtk.builtInMacroToCheck __SHORT_SIZE__
+edgtk.builtInMacroToCheck __SIGNED_CHAR_MAX__
+edgtk.builtInMacroToCheck __SIGNED_CHAR_MIN__
+edgtk.builtInMacroToCheck __SIGNED_INT_MAX__
+edgtk.builtInMacroToCheck __SIGNED_INT_MIN__
+edgtk.builtInMacroToCheck __SIGNED_LONG_LONG_MAX__
+edgtk.builtInMacroToCheck __SIGNED_LONG_LONG_MIN__
+edgtk.builtInMacroToCheck __SIGNED_LONG_MAX__
+edgtk.builtInMacroToCheck __SIGNED_LONG_MIN__
+edgtk.builtInMacroToCheck __SIGNED_SHORT_MAX__
+edgtk.builtInMacroToCheck __SIGNED_SHORT_MIN__
+edgtk.builtInMacroToCheck __SIZE_T_MAX__
+edgtk.builtInMacroToCheck __SIZE_T_TYPE__
+edgtk.builtInMacroToCheck __SUBNORMAL_FLOATING_POINTS__
+edgtk.builtInMacroToCheck __TID__
+edgtk.builtInMacroToCheck __UINT_FAST16_T_MAX__
+edgtk.builtInMacroToCheck __UINT_FAST16_T_TYPE__
+edgtk.builtInMacroToCheck __UINT_FAST32_T_MAX__
+edgtk.builtInMacroToCheck __UINT_FAST32_T_TYPE__
+edgtk.builtInMacroToCheck __UINT_FAST8_T_MAX__
+edgtk.builtInMacroToCheck __UINT_FAST8_T_TYPE__
+edgtk.builtInMacroToCheck __UINT_LEAST16_T_MAX__
+edgtk.builtInMacroToCheck __UINT_LEAST16_T_TYPE__
+edgtk.builtInMacroToCheck __UINT_LEAST32_T_MAX__
+edgtk.builtInMacroToCheck __UINT_LEAST32_T_TYPE__
+edgtk.builtInMacroToCheck __UINT_LEAST8_T_MAX__
+edgtk.builtInMacroToCheck __UINT_LEAST8_T_TYPE__
+edgtk.builtInMacroToCheck __UINT16_C_SUFFIX__
+edgtk.builtInMacroToCheck __UINT16_T_MAX__
+edgtk.builtInMacroToCheck __UINT16_T_TYPE__
+edgtk.builtInMacroToCheck __UINT32_C_SUFFIX__
+edgtk.builtInMacroToCheck __UINT32_T_MAX__
+edgtk.builtInMacroToCheck __UINT32_T_TYPE__
+edgtk.builtInMacroToCheck __UINT8_C_SUFFIX__
+edgtk.builtInMacroToCheck __UINT8_T_MAX__
+edgtk.builtInMacroToCheck __UINT8_T_TYPE__
+edgtk.builtInMacroToCheck __UINTMAX_C_SUFFIX__
+edgtk.builtInMacroToCheck __UINTMAX_T_MAX__
+edgtk.builtInMacroToCheck __UINTMAX_T_TYPE__
+edgtk.builtInMacroToCheck __UINTPTR_T_MAX__
+edgtk.builtInMacroToCheck __UINTPTR_T_TYPE__
+edgtk.builtInMacroToCheck __UNSIGNED_CHAR_MAX__
+edgtk.builtInMacroToCheck __UNSIGNED_INT_MAX__
+edgtk.builtInMacroToCheck __UNSIGNED_LONG_LONG_MAX__
+edgtk.builtInMacroToCheck __UNSIGNED_LONG_MAX__
+edgtk.builtInMacroToCheck __UNSIGNED_SHORT_MAX__
+edgtk.builtInMacroToCheck __VA_STACK_ALIGN__
+edgtk.builtInMacroToCheck __VA_STACK_ALIGN_EXTRA_BEFORE__
+edgtk.builtInMacroToCheck __VA_STACK_DECREASING__
+edgtk.builtInMacroToCheck __WCHAR_T
+edgtk.builtInMacroToCheck __WCHAR_T_MAX__
+edgtk.builtInMacroToCheck __WCHAR_T_SIZE__
+edgtk.builtInMacroToCheck __WCHAR_T_TYPE__
+edgtk.builtInMacroToCheck _RTSL_COMPARE_T
+
+# GreenHills C/C++ Compiler for INTEGRITY on PPC
+edgtk.builtInMacroToCheck __TARGET__
+edgtk.builtInMacroToCheck __CPU_NAME__
+edgtk.builtInMacroToCheck __OS_DIR__
+edgtk.builtInMacroToCheck __OS_DIR
+edgtk.builtInMacroToCheck __BSP_DIR_FULL__
+edgtk.builtInMacroToCheck __FULL_DIR__
+edgtk.builtInMacroToCheck __FULL_FILE__
+edgtk.builtInMacroToCheck __LANGUAGE_ASM__
+edgtk.builtInMacroToCheck __LANGUAGE_C__
+edgtk.builtInMacroToCheck __LANGUAGE_CXX__
+edgtk.builtInMacroToCheck __Japanese_Automotive_C__
+edgtk.builtInMacroToCheck __PROTOTYPES__
+edgtk.builtInMacroToCheck __c_plusplus
+edgtk.builtInMacroToCheck __EMBEDDED_CXX
+edgtk.builtInMacroToCheck __EXTENDED_EMBEDDED_CXX
+edgtk.builtInMacroToCheck __EXTENDED_EMBEDDED_CXX_HEADERS
+edgtk.builtInMacroToCheck __STANDARD_CXX
+edgtk.builtInMacroToCheck __STANDARD_CXX_HEADERS
+edgtk.builtInMacroToCheck __ghs__
+edgtk.builtInMacroToCheck __ghs
+edgtk.builtInMacroToCheck __ghs_asm
+edgtk.builtInMacroToCheck __GHS_REVISION_DATE
+edgtk.builtInMacroToCheck __GHS_REVISION_VALUE
+edgtk.builtInMacroToCheck __GHS_VERSION_NUMBER
+edgtk.builtInMacroToCheck __gnu_asm
+edgtk.builtInMacroToCheck __unix_asm
+edgtk.builtInMacroToCheck __CHAR_BIT
+edgtk.builtInMacroToCheck __FUNCPTR_BIT
+edgtk.builtInMacroToCheck __INT_BIT
+edgtk.builtInMacroToCheck __LONG_BIT
+edgtk.builtInMacroToCheck __LLONG_BIT
+edgtk.builtInMacroToCheck __PTR_BIT
+edgtk.builtInMacroToCheck __REG_BIT
+edgtk.builtInMacroToCheck __SHRT_BIT
+edgtk.builtInMacroToCheck __WCHAR_BIT
+edgtk.builtInMacroToCheck __Enum_Field_Is_Signed__
+edgtk.builtInMacroToCheck __Enum_Field_Is_Unsigned__
+edgtk.builtInMacroToCheck __Field_Is_Signed__
+edgtk.builtInMacroToCheck __Field_Is_Unsigned__
+edgtk.builtInMacroToCheck __Ptr_Is_Signed__
+edgtk.builtInMacroToCheck __Ptr_Is_Unsigned__
+edgtk.builtInMacroToCheck __Char_Is_Signed__
+edgtk.builtInMacroToCheck __Char_Is_Unsigned__
+edgtk.builtInMacroToCheck __WChar_Is_Signed__
+edgtk.builtInMacroToCheck __WChar_Is_Unsigned__
+edgtk.builtInMacroToCheck __DOUBLE_HL__
+edgtk.builtInMacroToCheck __IeeeFloat__
+edgtk.builtInMacroToCheck __NoFloat__
+edgtk.builtInMacroToCheck __SoftwareDouble__
+edgtk.builtInMacroToCheck __SoftwareFloat__
+edgtk.builtInMacroToCheck __MISRA_i
+edgtk.builtInMacroToCheck __ONLY_STANDARD_KEYWORDS_IN_C
+edgtk.builtInMacroToCheck __ghs_pic
+edgtk.builtInMacroToCheck __ghs_pid
+edgtk.builtInMacroToCheck __ghs_sda
+edgtk.builtInMacroToCheck __ghs_sda_threshold
+edgtk.builtInMacroToCheck __ghs_tda
+edgtk.builtInMacroToCheck __ghs_zda
+edgtk.builtInMacroToCheck __ghs_zda_threshold
+edgtk.builtInMacroToCheck __GlobalRegisters
+edgtk.builtInMacroToCheck __GHS_NOCOMMONS__
+edgtk.builtInMacroToCheck __ghs_alignment
+edgtk.builtInMacroToCheck __ghs_max_pack_value
+edgtk.builtInMacroToCheck __ghs_packing
+edgtk.builtInMacroToCheck __BASE__
+edgtk.builtInMacroToCheck __BSD__
+edgtk.builtInMacroToCheck __COFF__
+edgtk.builtInMacroToCheck __GHS_Inline_Memory_Functions
+edgtk.builtInMacroToCheck __GHS_Inline_String_Functions
+edgtk.builtInMacroToCheck __GHS_Optimize_Inline
+edgtk.builtInMacroToCheck __EDG_RUNTIME_USES_NAMESPACES
+edgtk.builtInMacroToCheck __EXCEPTION_HANDLING
+edgtk.builtInMacroToCheck __NAMESPACES
+edgtk.builtInMacroToCheck __THREADX
+edgtk.builtInMacroToCheck TX_ENABLE_EVENT_LOGGING
+edgtk.builtInMacroToCheck __Char_Is_Unsigned
+edgtk.builtInMacroToCheck __Int_Is_32
+edgtk.builtInMacroToCheck __Int_Is_64
+edgtk.builtInMacroToCheck __msw
+edgtk.builtInMacroToCheck __LL_BIT
+edgtk.builtInMacroToCheck __LL_Is_64
+edgtk.builtInMacroToCheck __Long_Is_32
+edgtk.builtInMacroToCheck __Long_Is_64
+edgtk.builtInMacroToCheck __Ptr_Is_32
+edgtk.builtInMacroToCheck __Ptr_Is_64
+edgtk.builtInMacroToCheck __Reg_Is_32
+edgtk.builtInMacroToCheck __Reg_Is_64
+edgtk.builtInMacroToCheck __WChar_Is_Int__
+edgtk.builtInMacroToCheck __WChar_Is_Long__
+edgtk.builtInMacroToCheck __WChar_Is_Short__
+# moved from ghsppc-specific
+edgtk.builtInMacroToCheck __EFP_APU__
+edgtk.builtInMacroToCheck __MAC__
+edgtk.builtInMacroToCheck __PowerPC__
+edgtk.builtInMacroToCheck __SPE__
+edgtk.builtInMacroToCheck __vle__
+# 4.0
+edgtk.builtInMacroToCheck _NO_LONGLONG
+edgtk.builtInMacroToCheck _PTHREADS
+edgtk.builtInMacroToCheck _REENTRANT
+edgtk.builtInMacroToCheck __BSD
+edgtk.builtInMacroToCheck __CCOM__
+edgtk.builtInMacroToCheck __COFF
+edgtk.builtInMacroToCheck __Char_Is_Signed
+edgtk.builtInMacroToCheck __DOUBLE_HL
+edgtk.builtInMacroToCheck __ELF
+edgtk.builtInMacroToCheck __EMBEDDED_CXX_HEADERS
+edgtk.builtInMacroToCheck __GHS_NOCOMMONS
+edgtk.builtInMacroToCheck __INTEGRITY
+edgtk.builtInMacroToCheck __IeeeFloat
+edgtk.builtInMacroToCheck __Japanese_Automotive_C
+edgtk.builtInMacroToCheck __LINUX
+edgtk.builtInMacroToCheck __MAC
+edgtk.builtInMacroToCheck __NoFloat
+edgtk.builtInMacroToCheck __PowerPC
+edgtk.builtInMacroToCheck __Ptr_Is_Signed
+edgtk.builtInMacroToCheck __Ptr_Is_Unsigned
+edgtk.builtInMacroToCheck __SoftwareDouble
+edgtk.builtInMacroToCheck __SoftwareFloat
+edgtk.builtInMacroToCheck __USER_LABEL_PREFIX
+edgtk.builtInMacroToCheck __ghs_fprecise
+edgtk.builtInMacroToCheck __ghs_psinfo
+edgtk.builtInMacroToCheck __ghs_stdcall
+edgtk.builtInMacroToCheck __ghs_struct_min_alignment
+edgtk.builtInMacroToCheck __linux
+edgtk.builtInMacroToCheck pixel
+edgtk.builtInMacroToCheck vector
+# 4.2
+edgtk.builtInMacroToCheck __NO_LONGLONG
+edgtk.builtInMacroToCheck __ghs_c_int__
+# 7.1
+edgtk.builtInMacroToCheck __PPC64__
+edgtk.builtInMacroToCheck __PPC64_ABI__
+edgtk.builtInMacroToCheck __ghs_fprecise__
+edgtk.builtInMacroToCheck __GHS_NO_ZERO_COMMONS__
+edgtk.builtInMacroToCheck __AUTO_TYPE
+edgtk.builtInMacroToCheck __RANGE_BASED_FOR
+edgtk.builtInMacroToCheck __LLP64__
+
+# icc430 (IAR C/C++ compiler for MSP430):
+edgtk.builtInMacroToCheck __EDG_ELEM_COUNT_PARAM_TYPE
+edgtk.builtInMacroToCheck __EDG_NULL_EH_REGION_NUMBER
+edgtk.builtInMacroToCheck __EDG_REGION_NUMBER_TYPE
+edgtk.builtInMacroToCheck __EDG_VAR_HANDLE_TYPE
+edgtk.builtInMacroToCheck __EDG_JMP_BUF_NUM_ELEMENTS
+edgtk.builtInMacroToCheck __EDG_JMP_BUF_ELEMENT_TYPE
+edgtk.builtInMacroToCheck __REGISTER_MODEL__
+edgtk.builtInMacroToCheck __REGISTER_MODEL_REG20__
+edgtk.builtInMacroToCheck __REGISTER_MODEL_REG16__
+edgtk.builtInMacroToCheck __ICC430__
+edgtk.builtInMacroToCheck __IAR_SYSTEMS_ICC
+edgtk.builtInMacroToCheck __DATA_MODEL_SMALL__
+edgtk.builtInMacroToCheck __DATA_MODEL_MEDIUM__
+edgtk.builtInMacroToCheck __DATA_MODEL_LARGE__
+edgtk.builtInMacroToCheck __430__
+edgtk.builtInMacroToCheck __430X__
+edgtk.builtInMacroToCheck __PRAGMA_PACK_ON__
+edgtk.builtInMacroToCheck __INT_FAST64_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __UINT_FAST64_T_MAX__
+edgtk.builtInMacroToCheck __UINT_FAST64_T_TYPE__
+edgtk.builtInMacroToCheck __INT_FAST64_T_MIN__
+edgtk.builtInMacroToCheck __INT_FAST64_T_MAX__
+edgtk.builtInMacroToCheck __INT_FAST64_T_TYPE__
+edgtk.builtInMacroToCheck __INT_LEAST64_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __UINT64_C_SUFFIX__
+edgtk.builtInMacroToCheck __INT64_C_SUFFIX__
+edgtk.builtInMacroToCheck __UINT_LEAST64_T_MAX__
+edgtk.builtInMacroToCheck __UINT_LEAST64_T_TYPE__
+edgtk.builtInMacroToCheck __INT_LEAST64_T_MIN__
+edgtk.builtInMacroToCheck __INT_LEAST64_T_MAX__
+edgtk.builtInMacroToCheck __INT_LEAST64_T_TYPE__
+edgtk.builtInMacroToCheck __INT64_SIZE_PREFIX__
+edgtk.builtInMacroToCheck __UINT64_T_MAX__
+edgtk.builtInMacroToCheck __UINT64_T_TYPE__
+edgtk.builtInMacroToCheck __INT64_T_MIN__
+edgtk.builtInMacroToCheck __INT64_T_MAX__
+edgtk.builtInMacroToCheck __INT64_T_TYPE__
+edgtk.builtInMacroToCheck __POSITION_INDEPENDENT_CODE__
+
+# Renesas C Compiler for M16C Series, R8C Family
+edgtk.builtInMacroToCheck M16C
+edgtk.builtInMacroToCheck NC30
+edgtk.builtInMacroToCheck __R8C__
+edgtk.builtInMacroToCheck __NEAR__
+edgtk.builtInMacroToCheck __SIZET_16__
+edgtk.builtInMacroToCheck __PTRDIFFT_16__
+edgtk.builtInMacroToCheck __DOUBLE_32__
+
+# iccarm (IAR C/C++ compiler for ARM):
+edgtk.builtInMacroToCheck __DEF_HEAP_MEM__
+edgtk.builtInMacroToCheck __DEF_PTR_MEM__
+edgtk.builtInMacroToCheck __AAPCS__
+edgtk.builtInMacroToCheck __ARM4TM__
+edgtk.builtInMacroToCheck __CPU_MODE__
+edgtk.builtInMacroToCheck __ICCARM__
+edgtk.builtInMacroToCheck __HAS_PACKED__
+edgtk.builtInMacroToCheck __HAS_JOINED_TYPES__
+edgtk.builtInMacroToCheck __BOOL_SIZE__
+edgtk.builtInMacroToCheck __DEF_PTR_SIZE__
+edgtk.builtInMacroToCheck __STDC_NO_VLA__
+edgtk.builtInMacroToCheck __STDC_NO_ATOMICS__
+edgtk.builtInMacroToCheck __AAPCS_VFP__
+edgtk.builtInMacroToCheck __ARM_ADVANCED_SIMD__
+edgtk.builtInMacroToCheck __ARM_MEDIA__
+edgtk.builtInMacroToCheck __ARM_MPCORE__
+edgtk.builtInMacroToCheck __ARM_PROFILE_M__
+edgtk.builtInMacroToCheck __ARM5__
+edgtk.builtInMacroToCheck __ARM5E__
+edgtk.builtInMacroToCheck __ARM5T__
+edgtk.builtInMacroToCheck __ARM5TM__
+edgtk.builtInMacroToCheck __ARM6__
+edgtk.builtInMacroToCheck __ARM6M__
+edgtk.builtInMacroToCheck __ARM6MEDIA__
+edgtk.builtInMacroToCheck __ARM6SM__
+edgtk.builtInMacroToCheck __ARM6T2__
+edgtk.builtInMacroToCheck __ARM7__
+edgtk.builtInMacroToCheck __ARM7A__
+edgtk.builtInMacroToCheck __ARM7EM__
+edgtk.builtInMacroToCheck __ARM7M__
+edgtk.builtInMacroToCheck __ARM7R__
+edgtk.builtInMacroToCheck __ARM7S__
+edgtk.builtInMacroToCheck __ARMFPV5__
+edgtk.builtInMacroToCheck __ARMVFP__
+edgtk.builtInMacroToCheck __ARMVFP_D16__
+edgtk.builtInMacroToCheck __ARMVFP_FP16__
+edgtk.builtInMacroToCheck __ARMVFP_SP__
+edgtk.builtInMacroToCheck __ARMVFPV1__
+edgtk.builtInMacroToCheck __ARMVFPV2__
+edgtk.builtInMacroToCheck __ARMVFPV3__
+edgtk.builtInMacroToCheck __ARMVFPV3_D16__
+edgtk.builtInMacroToCheck __ARMVFPV3_FP16__
+edgtk.builtInMacroToCheck __ARMVFPV4__
+edgtk.builtInMacroToCheck __INTERWORKING__
+edgtk.builtInMacroToCheck __EDG_CPP11_IL_EXTENSIONS_SUPPORTED
+edgtk.builtInMacroToCheck __CHAR16_T_AND_CHAR32_T
+edgtk.builtInMacroToCheck __VARIADIC_TEMPLATES
+edgtk.builtInMacroToCheck __STDCPP_THREADS__
+edgtk.builtInMacroToCheck __EDG_CONSTEXPR_ENABLED__
+edgtk.builtInMacroToCheck __cpp_unicode_characters
+edgtk.builtInMacroToCheck __cpp_attributes
+edgtk.builtInMacroToCheck __cpp_binary_literals
+edgtk.builtInMacroToCheck __cpp_decltype
+edgtk.builtInMacroToCheck __cpp_decltype_auto
+edgtk.builtInMacroToCheck __cpp_lambdas
+edgtk.builtInMacroToCheck __cpp_raw_strings
+edgtk.builtInMacroToCheck __cpp_rvalue_references
+edgtk.builtInMacroToCheck __cpp_static_assert
+edgtk.builtInMacroToCheck __cpp_unicode_literals
+edgtk.builtInMacroToCheck __cpp_user_defined_literals
+edgtk.builtInMacroToCheck __cpp_variadic_templates
+edgtk.builtInMacroToCheck __cpp_constexpr
+edgtk.builtInMacroToCheck __RWPI__
+edgtk.builtInMacroToCheck __IASMARM__
+edgtk.builtInMacroToCheck __ARM_ARCH
+edgtk.builtInMacroToCheck __ARM_ARCH_ISA_ARM
+edgtk.builtInMacroToCheck __ARM_ARCH_ISA_THUMB
+edgtk.builtInMacroToCheck __ARM_BIG_ENDIAN
+edgtk.builtInMacroToCheck __ARM_FEATURE_CMSE
+edgtk.builtInMacroToCheck __ARM_FEATURE_DSP
+edgtk.builtInMacroToCheck __ARM_FEATURE_IDIV
+edgtk.builtInMacroToCheck __EXCEPTIONS__
+edgtk.builtInMacroToCheck __STDC_LIB_EXT1__
+edgtk.builtInMacroToCheck __STDC_NO_THREADS__
+edgtk.builtInMacroToCheck __STDC_UTF16__
+edgtk.builtInMacroToCheck __STDC_UTF32__
+
+# iccrx (IAR C/C++ compiler for RX):
+edgtk.builtInMacroToCheck __CORE_V1__
+edgtk.builtInMacroToCheck __CORE_V2__
+edgtk.builtInMacroToCheck __DOUBLE__
+edgtk.builtInMacroToCheck __FAR__
+edgtk.builtInMacroToCheck __FPU__
+edgtk.builtInMacroToCheck __HUGE__
+edgtk.builtInMacroToCheck __ICCRX__
+edgtk.builtInMacroToCheck __INTSIZE__
+edgtk.builtInMacroToCheck __ROPI__
+
+# kc166 (Keil C/EC++ compiler for c166):
+edgtk.builtInMacroToCheck __DUS__
+edgtk.builtInMacroToCheck __FLOAT64__
+edgtk.builtInMacroToCheck __MAC__
+edgtk.builtInMacroToCheck __MOD167__
+edgtk.builtInMacroToCheck __MODV2__
+edgtk.builtInMacroToCheck __MODEL__
+edgtk.builtInMacroToCheck __SAVEMAC__
+
+# Borland C/C++ Compiler for Win32
+edgtk.builtInMacroToCheck __ANDROID__
+edgtk.builtInMacroToCheck __APPLE__
+edgtk.builtinMacroToCheck __BCOPT__
+edgtk.builtinMacroToCheck __BCPLUSPLUS__
+edgtk.builtinMacroToCheck __BORLANDC__
+edgtk.builtinMacroToCheck __CDECL__
+edgtk.builtinMacroToCheck __CGVER__
+edgtk.builtInMacroToCheck __clang__
+edgtk.builtInMacroToCheck __CODEGEARC__
+edgtk.builtInMacroToCheck __CODEGEARC_VERSION__
+edgtk.builtinMacroToCheck __CODEGUARD__
+edgtk.builtinMacroToCheck __CONSOLE__
+edgtk.builtinMacroToCheck __DLL__
+edgtk.builtinMacroToCheck __FASTCALL__
+edgtk.builtinMacroToCheck __FLAT__
+edgtk.builtinMacroToCheck __i386__
+edgtk.builtinMacroToCheck __KR__
+edgtk.builtInMacroToCheck __MACH__
+edgtk.builtinMacroToCheck __MFC_COMPAT__
+edgtk.builtinMacroToCheck __MSFASTCALL__
+edgtk.builtinMacroToCheck __MT__
+edgtk.builtinMacroToCheck __PASCAL__
+edgtk.builtinMacroToCheck _PUSHPOP_SUPPORTED
+edgtk.builtinMacroToCheck __RTLDLL
+edgtk.builtinMacroToCheck _STDCALL_SUPPORTED
+edgtk.builtinMacroToCheck __TCPLUSPLUS__
+edgtk.builtinMacroToCheck __TEMPLATES__
+edgtk.builtinMacroToCheck __TLS__
+edgtk.builtinMacroToCheck __TURBOC__
+edgtk.builtinMacroToCheck _UNICODE
+edgtk.builtInMacroToCheck UNICODE
+edgtk.builtinMacroToCheck __UNIX__
+edgtk.builtInMacroToCheck __UUID_SUPPORT__
+edgtk.builtinMacroToCheck _Windows
+edgtk.builtinMacroToCheck __WIN32__
+edgtk.builtinMacroToCheck __XDLLMT__
+edgtk.builtinMacroToCheck __linux__
+
+# Freescale CodeWarrior C/C++ Compiler for ARM
+edgtk.builtinMacroToCheck __COUNTER__
+edgtk.builtinMacroToCheck __CWCC__
+edgtk.builtinMacroToCheck __CWBE__
+edgtk.builtinMacroToCheck __CWBUILD__
+edgtk.builtinMacroToCheck __CASM__
+edgtk.builtinMacroToCheck __MWERKS__
+edgtk.builtinMacroToCheck __KINETIS__
+edgtk.builtinMacroToCheck __optlevel0
+edgtk.builtinMacroToCheck __optlevel1
+edgtk.builtinMacroToCheck __optlevel2
+edgtk.builtinMacroToCheck __optlevel3
+edgtk.builtinMacroToCheck __optlevel4
+edgtk.builtinMacroToCheck __profile__
+edgtk.builtinMacroToCheck __IA64_CPP_ABI__
+edgtk.builtinMacroToCheck __IA64_CPP_ABI_ARM__
+edgtk.builtinMacroToCheck __thumb
+edgtk.builtinMacroToCheck __thumb2
+edgtk.builtinMacroToCheck __thumb2__
+edgtk.builtinMacroToCheck __SEMIHOSTING
+edgtk.builtinMacroToCheck __APCS_INTERWORKING
+edgtk.builtinMacroToCheck __VFPV4__
+edgtk.builtinMacroToCheck __TARGET_CPU_ARM1136JF_S
+edgtk.builtinMacroToCheck __PALMOS_ARMLET__
+edgtk.builtinMacroToCheck __PACE_NATIVE_OBJECT__
+
+# Code Sourcery G++ Lite
+edgtk.builtinMacroToCheck __APCS_32__
+edgtk.builtinMacroToCheck __ARM_ARCH_5T__
+edgtk.builtinMacroToCheck __ARM_EABI__
+edgtk.builtinMacroToCheck __ARMEL__
+edgtk.builtinMacroToCheck __DBL_HAS_DENORM__
+edgtk.builtinMacroToCheck __DEC_EVAL_METHOD__
+edgtk.builtinMacroToCheck __DEC128_DEN__
+edgtk.builtinMacroToCheck __DEC128_EPSILON__
+edgtk.builtinMacroToCheck __DEC128_MANT_DIG__
+edgtk.builtinMacroToCheck __DEC128_MAX__
+edgtk.builtinMacroToCheck __DEC128_MAX_EXP__
+edgtk.builtinMacroToCheck __DEC128_MIN__
+edgtk.builtinMacroToCheck __DEC128_MIN_EXP__
+edgtk.builtinMacroToCheck __DEC32_DEN__
+edgtk.builtinMacroToCheck __DEC32_EPSILON__
+edgtk.builtinMacroToCheck __DEC32_MANT_DIG__
+edgtk.builtinMacroToCheck __DEC32_MAX__
+edgtk.builtinMacroToCheck __DEC32_MAX_EXP__
+edgtk.builtinMacroToCheck __DEC32_MIN__
+edgtk.builtinMacroToCheck __DEC32_MIN_EXP__
+edgtk.builtinMacroToCheck __DEC64_DEN__
+edgtk.builtinMacroToCheck __DEC64_EPSILON__
+edgtk.builtinMacroToCheck __DEC64_MANT_DIG__
+edgtk.builtinMacroToCheck __DEC64_MAX__
+edgtk.builtinMacroToCheck __DEC64_MAX_EXP__
+edgtk.builtinMacroToCheck __DEC64_MIN__
+edgtk.builtinMacroToCheck __DEC64_MIN_EXP__
+edgtk.builtinMacroToCheck __FLT_HAS_DENORM__
+edgtk.builtinMacroToCheck __gnu_linux__
+edgtk.builtinMacroToCheck __GNUC_GNU_INLINE__
+edgtk.builtinMacroToCheck __GXX_TYPEINFO_EQUALITY_INLINE
+edgtk.builtinMacroToCheck __LDBL_HAS_DENORM__
+edgtk.builtinMacroToCheck __linux
+edgtk.builtinMacroToCheck __SIZEOF_DOUBLE__
+edgtk.builtinMacroToCheck __SIZEOF_FLOAT__
+edgtk.builtinMacroToCheck __SIZEOF_INT__
+edgtk.builtinMacroToCheck __SIZEOF_LONG__
+edgtk.builtinMacroToCheck __SIZEOF_LONG_DOUBLE__
+edgtk.builtinMacroToCheck __SIZEOF_LONG_LONG__
+edgtk.builtinMacroToCheck __SIZEOF_POINTER__
+edgtk.builtinMacroToCheck __SIZEOF_PTRDIFF_T__
+edgtk.builtinMacroToCheck __SIZEOF_SHORT__
+edgtk.builtinMacroToCheck __SIZEOF_SIZE_T__
+edgtk.builtinMacroToCheck __SIZEOF_WCHAR_T__
+edgtk.builtinMacroToCheck __SIZEOF_WINT_T__
+edgtk.builtinMacroToCheck __THUMB_INTERWORK__
+edgtk.builtinMacroToCheck __VFP_FP__
+edgtk.builtinMacroToCheck linux
+edgtk.builtinMacroToCheck __GXX_WEAK__
+edgtk.builtinMacroToCheck __GXX_RTTI
+edgtk.builtinMacroToCheck __DEPRECATED
+edgtk.builtinMacroToCheck _GNU_SOURCE
+edgtk.builtinMacroToCheck __WCHAR_UNSIGNED__
+
+# National Instruments LabWindows CVI2013 Compiler (NI Clang)
+edgtk.builtinMacroToCheck WIN32
+edgtk.builtinMacroToCheck WINNT
+edgtk.builtinMacroToCheck _CVI_C99_EXTENSIONS
+edgtk.builtinMacroToCheck _X86_
+edgtk.builtinMacroToCheck _CHAR16_TYPE__
+edgtk.builtinMacroToCheck _CHAR32_TYPE__
+edgtk.builtinMacroToCheck _CONSTANT_CFSTRINGS__
+edgtk.builtinMacroToCheck __GNUC_STDC_INLINE__
+edgtk.builtinMacroToCheck __INT8_TYPE__
+edgtk.builtinMacroToCheck __INT16_TYPE__
+edgtk.builtinMacroToCheck __INT32_TYPE__
+edgtk.builtinMacroToCheck __INT64_TYPE__
+edgtk.builtinMacroToCheck __INTMAX_WIDTH__
+edgtk.builtinMacroToCheck __INTPTR_TYPE__
+edgtk.builtinMacroToCheck __INTPTR_WIDTH__
+edgtk.builtinMacroToCheck __MSVCRT__
+edgtk.builtinMacroToCheck __NO_MATH_INLINES
+edgtk.builtinMacroToCheck __POINTER_WIDTH__
+edgtk.builtinMacroToCheck __PTRDIFF_WIDTH__
+edgtk.builtinMacroToCheck __SIG_ATOMIC_WIDTH__
+edgtk.builtinMacroToCheck __SIZE_WIDTH__
+edgtk.builtinMacroToCheck __WCHAR_WIDTH__
+edgtk.builtinMacroToCheck __WINT_WIDTH__
+edgtk.builtinMacroToCheck __llvm__
+edgtk.builtinMacroToCheck __nocona
+edgtk.builtinMacroToCheck __nocona__
+edgtk.builtinMacroToCheck __tune_nocona__
+
+# National Instruments LabWindows CVI2015 Compiler (NI Clang)
+edgtk.builtinMacroToCheck _CVI_C99_EXTENSIONS_
+edgtk.builtinMacroToCheck __ATOMIC_RELAXED
+edgtk.builtinMacroToCheck __ATOMIC_CONSUME
+edgtk.builtinMacroToCheck __ATOMIC_ACQUIRE
+edgtk.builtinMacroToCheck __ATOMIC_RELEASE
+edgtk.builtinMacroToCheck __ATOMIC_ACQ_REL
+edgtk.builtinMacroToCheck __ATOMIC_SEQ_CST
+edgtk.builtinMacroToCheck __CONSTANT_CFSTRINGS__
+edgtk.builtinMacroToCheck __ORDER_LITTLE_ENDIAN__
+edgtk.builtinMacroToCheck __ORDER_BIG_ENDIAN__
+edgtk.builtinMacroToCheck __ORDER_PDP_ENDIAN__
+edgtk.builtinMacroToCheck __BYTE_ORDER__
+edgtk.builtinMacroToCheck __SIZE_MAX__
+edgtk.builtinMacroToCheck __GCC_ATOMIC_TEST_AND_SET_TRUEVAL
+edgtk.builtinMacroToCheck __GCC_ATOMIC_BOOL_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_CHAR_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_CHAR16_T_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_CHAR32_T_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_WCHAR_T_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_SHORT_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_INT_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_LONG_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_LLONG_LOCK_FREE
+edgtk.builtinMacroToCheck __GCC_ATOMIC_POINTER_LOCK_FREE
+edgtk.builtinMacroToCheck __NO_INLINE__
+edgtk.builtinMacroToCheck __tune_i386__
+edgtk.builtinMacroToCheck __WINNT__
+
+# ADSP compilers (Analog Devices VisualDSP++)
+edgtk.builtInMacroToCheck __ADI_LIBEH__
+edgtk.builtInMacroToCheck _ADI_THREADS
+edgtk.builtInMacroToCheck __ANALOG_EXTENSIONS__
+edgtk.builtInMacroToCheck __DOUBLES_ARE_FLOATS__
+edgtk.builtInMacroToCheck __ECC__
+edgtk.builtInMacroToCheck __NO_BUILTIN
+edgtk.builtInMacroToCheck __SILICON_REVISION__
+edgtk.builtInMacroToCheck __WORKAROUNDS_ENABLED
+edgtk.builtInMacroToCheck __HOSTNAME__
+edgtk.builtInMacroToCheck __MACHINE__
+edgtk.builtInMacroToCheck __SYSTEM__
+edgtk.builtInMacroToCheck __USERNAME__
+edgtk.builtInMacroToCheck __GROUPNAME__
+edgtk.builtInMacroToCheck __REALNAME__
+# ad21k-specific
+edgtk.builtInMacroToCheck __2106x__
+edgtk.builtInMacroToCheck __2116x__
+edgtk.builtInMacroToCheck __2126x__
+edgtk.builtInMacroToCheck __2136x__
+edgtk.builtInMacroToCheck __ADSP21000__
+edgtk.builtInMacroToCheck __ADSP21020__
+edgtk.builtInMacroToCheck __ADSP21060__
+edgtk.builtInMacroToCheck __ADSP21061__
+edgtk.builtInMacroToCheck __ADSP21062__
+edgtk.builtInMacroToCheck __ADSP21065L__
+edgtk.builtInMacroToCheck __ADSP21160__
+edgtk.builtInMacroToCheck __ADSP21161__
+edgtk.builtInMacroToCheck __ADSP21261__
+edgtk.builtInMacroToCheck __ADSP21262__
+edgtk.builtInMacroToCheck __ADSP21266__
+edgtk.builtInMacroToCheck __ADSP21267__
+edgtk.builtInMacroToCheck __ADSP21363__
+edgtk.builtInMacroToCheck __ADSP21364__
+edgtk.builtInMacroToCheck __ADSP21365__
+edgtk.builtInMacroToCheck _NO_LONGLONG
+# adts-specific
+edgtk.builtInMacroToCheck __ADSPTS__
+edgtk.builtInMacroToCheck __ADSPTS101__
+edgtk.builtInMacroToCheck __ADSPTS201__
+edgtk.builtInMacroToCheck __ADSPTS202__
+edgtk.builtInMacroToCheck __ADSPTS203__
+edgtk.builtInMacroToCheck __ADSPTS20x__
+edgtk.builtInMacroToCheck __TS_BYTE_ADDRESS
+
+
+
+edgtk.compilerExecutable gcc
+edgtk.compilerCommand {exe} {opts} [cpptest_include_dir:-I "{cpptest_include_dir}"] -c -xc -m64 "{input}" -o "{output}"
+edgtk.assemblerCommand {exe} {opts} -xassembler-with-cpp "{input}" -o "{output}"
+edgtk.objectExtension .o
+
+edgtk.asmFileExtension S
+edgtk.asmFileExtension s
+
+edgtk.potentialPreinclude stdc-predef.h
+
+edgtk.cppFileEnforcedByDriver g\+\+[^\\/]*$
+edgtk.derivedCanHaveNoCtorIfBaseHasNoDefaultCtor FALSE
+edgtk.unsuppressInlineBody TRUE
+edgtk.emptyInitializerListForArraysAllowed TRUE
+
+
+edgtk.builtinVaListTypeIsCharPtr TRUE
+
+edgtk.hasProblemsWithLabelDeclAndVariableDeclInGnuStatement FALSE
+edgtk.needsNewStyleSpecializationForStaticMemberFieldDefinition FALSE
+edgtk.renderC99Bool TRUE
+edgtk.allowStaticInInline TRUE
+
+
+edgtk.preprocessorCommand {exe} {opts} -ftabstop=1 -E -xc -m64 {in} -o {out}
+edgtk.asmPreprocessorCommand {exe} {opts} -g -S -xc -m64 {in} -o {out}
+
+edgtk.useGccAutoconfiguration TRUE
+edgtk.gccAutoconfiguratorCommand {exe} {opts} -v -E -dM  -ffreestanding -xc -m64 {in} -o {out}
+
+edgtk.preprocessorExecutable gcc
+edgtk.compilerResponseFileSupported TRUE
+
+edgtk.verboseCmd {exe} {opts} -v -E -dM {in} &> {out}
+
+edgtk.verboseRule              input_state=start output_state=1 regex="gcc version *"
+edgtk.verboseRule name=cmd     input_state=1 output_state=2 regex=" * *" value={2}
+edgtk.verboseRule              input_state=2 output_state=3 regex="#include <...> search starts here:"
+edgtk.verboseRule              input_state=3 output_state=end regex="End of search list."
+edgtk.verboseRule name=include input_state=3 output_state=3 regex=" *" value={1}
+
+edgtk.includeDir source_file_directory                       user_priority=0
+edgtk.includeDir option=iquote                               user_priority=1
+edgtk.includeDir option=I mode=1           system_priority=3 user_priority=2
+edgtk.includeDir option=I mode=2                             user_priority=2
+edgtk.includeDir option=iwithprefixbefore  system_priority=3 user_priority=2 use_prefix_dir=true
+edgtk.includeDir option=isystem            system_priority=4 user_priority=4 is_system_dir=true
+edgtk.includeDir option=isysroot           system_priority=4 user_priority=4 is_system_dir=true
+edgtk.includeDir option=sysroot            system_priority=5 user_priority=5 is_system_dir=true
+edgtk.includeDir option=imultilib          system_priority=5 user_priority=5 is_system_dir=true
+edgtk.includeDir verbose=include           system_priority=5 user_priority=5 is_system_dir=true weakness=1
+edgtk.includeDir option=idirafter          system_priority=6 user_priority=6
+edgtk.includeDir option=iwithprefix        system_priority=6 user_priority=6 use_prefix_dir=true
+
+edgtk.includeDirPrefix option=iprefix
+edgtk.includeSearchMode option=I- mode_before=2 mode_after=1
+
+codewizard.preprocessorExtraOption -D__NO_INLINE__
+
+
+ipro.ignoreIncludeFile <built-in>
+ipro.ignoreIncludeFile <command-line>
+ipro.ignoreIncludeFile <command line>
+
+# CodeWarrior for ARM (cwarm_5_1)
+ipro.ignoreIncludeFile (C-C++ Preprocessor Panel)
+ipro.ignoreIncludeFile (command-line defines)
+ipro.ignoreIncludeFile (Library defines)
+
+
+edgtk.optionConfig name=w tags=preprocessor,disable-warning
+edgtk.optionConfig name=$ tags=preprocessor
+edgtk.optionConfig name=I- tags=preprocessor
+edgtk.optionConfig name=I params=1 concat=true tags=preprocessor
+edgtk.optionConfig name=D params=1 concat=true tags=preprocessor,defines_macro
+edgtk.optionConfig name=A params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=C tags=ignore
+edgtk.optionConfig name=idirafter params=1 concat=True tags=preprocessor
+
+
+
+edgtk.optionConfig name=include prefix=-- prefix=- params=1 concat=True tags=preprocessor
+
+edgtk.optionAlias option=include value=--preinclude-file={ARGV[1]}
+edgtk.optionConfig name=imacros params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=iprefix params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=iwithprefixbefore params=1 concat=False tags=preprocessor
+edgtk.optionConfig name=iwithprefix params=1 concat=False tags=preprocessor
+edgtk.optionConfig name=isystem params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=iquote params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=imultilib params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=isysroot params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=sysroot params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=-sysroot params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=nostdinc tags=preprocessor
+edgtk.optionConfig name=P tags=ignore
+edgtk.optionConfig name=remap tags=preprocessor
+edgtk.optionConfig name=trigraphs tags=preprocessor
+edgtk.optionConfig name=undef tags=preprocessor
+edgtk.optionConfig name=U params=1 concat=True tags=preprocessor,undefines_macro
+
+
+edgtk.optionConfig name=c tags=compiler,linker-exclude
+edgtk.optionConfig name=S tags=ignore
+edgtk.optionConfig name=E tags=ignore,cmdline-exclude
+edgtk.optionConfig name=H tags=ignore
+edgtk.optionConfig name=o params=1 concat=True tags=ignore,output
+edgtk.optionConfig name=pipe tags=compiler
+edgtk.optionConfig name=pass-exit-codes tags=compiler
+edgtk.optionConfig name=v tags=compiler
+edgtk.optionConfig name=version prefix=-- tags=ignore,cmdline-exclude
+edgtk.optionConfig name=### tags=compiler
+edgtk.optionConfig name=target-help prefix=-- tags=ignore
+edgtk.optionConfig name=help prefix=-- tags=ignore
+edgtk.optionConfig name=M tags=ignore,cmdline-exclude
+edgtk.optionConfig name=MD tags=ignore
+edgtk.optionConfig name=MMD tags=ignore
+edgtk.optionConfig name=MDD tags=ignore
+edgtk.optionConfig name=MM tags=ignore,cmdline-exclude
+edgtk.optionConfig name=MF params=1 concat=True tags=ignore
+edgtk.optionConfig name=MG tags=ignore
+edgtk.optionConfig name=MP tags=ignore
+edgtk.optionConfig name=MQ params=1 concat=True tags=ignore
+edgtk.optionConfig name=MT params=1 concat=True tags=ignore
+edgtk.optionConfig name=ansi tags=preprocessor
+
+edgtk.optionConfig name=std=c89 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=c89 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=c89 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=c89 tags=preprocessor id=std=c89
+edgtk.optionConfig name=std=iso9899:1990 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=iso9899:1990 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=iso9899:1990 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=iso9899:1990 tags=preprocessor id=std=c89
+edgtk.optionConfig name=std=iso9899:199409 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=iso9899:199409 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=iso9899:199409 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=iso9899:199409 tags=preprocessor id=std=c89
+edgtk.optionConfig name=std=gnu89 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=gnu89 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=gnu89 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=gnu89 tags=preprocessor id=std=c89
+
+edgtk.optionConfig name=std=c90 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=c90 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=c90 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=c90 tags=preprocessor id=std=c89
+edgtk.optionConfig name=std=gnu90 prefix=-- prefix=- tags=preprocessor id=std=c89
+edgtk.optionConfig name=-std param_value=gnu90 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,-std=gnu90 tags=preprocessor id=std=c89
+edgtk.optionConfig name=Wp,--std=gnu90 tags=preprocessor id=std=c89
+
+edgtk.optionAlias option=std=c89 value=--edg.std_version=199000
+edgtk.optionAlias option=std=c89 value=--edg.restrict_keyword_enabled=FALSE
+edgtk.optionAlias option=std=c89 value=--edg.long_long_promotion_allowed=FALSE
+edgtk.optionAlias option=std=c89 value=--edg.uliterals_enabled=FALSE
+edgtk.optionConfig name=std=c99 prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=c99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=c99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=c99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=std=gnu99 prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=gnu99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=gnu99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=gnu99 tags=preprocessor id=std=c99
+edgtk.optionConfig name=std=c9x prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=c9x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=c9x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=c9x tags=preprocessor id=std=c99
+edgtk.optionConfig name=std=gnu9x prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=gnu9x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=gnu9x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=gnu9x tags=preprocessor id=std=c99
+
+edgtk.optionConfig name=std=iso9899:1999 prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=iso9899:1999 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=iso9899:1999 tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=iso9899:1999 tags=preprocessor id=std=c99
+edgtk.optionConfig name=std=iso9899:199x prefix=-- prefix=- tags=preprocessor id=std=c99
+edgtk.optionConfig name=-std param_value=iso9899:199x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,-std=iso9899:199x tags=preprocessor id=std=c99
+edgtk.optionConfig name=Wp,--std=iso9899:199x tags=preprocessor id=std=c99
+
+edgtk.optionAlias option=std=c99 value=--edg.std_version=199901
+edgtk.optionAlias option=std=c99 value=--edg.restrict_keyword_enabled=TRUE
+edgtk.optionAlias option=std=c99 value=--edg.long_long_promotion_allowed=TRUE
+edgtk.optionAlias option=std=c99 value=--edg.uliterals_enabled=FALSE
+edgtk.optionConfig name=std=c1x prefix=-- prefix=- tags=preprocessor id=std=c11
+edgtk.optionConfig name=-std param_value=c1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,-std=c1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,--std=c1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=std=gnu1x prefix=-- prefix=- tags=preprocessor id=std=c11
+edgtk.optionConfig name=-std param_value=gnu1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,-std=gnu1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,--std=gnu1x tags=preprocessor id=std=c11
+edgtk.optionConfig name=std=c11 prefix=-- prefix=- tags=preprocessor id=std=c11
+edgtk.optionConfig name=-std param_value=c11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,-std=c11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,--std=c11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=std=gnu11 prefix=-- prefix=- tags=preprocessor id=std=c11
+edgtk.optionConfig name=-std param_value=gnu11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,-std=gnu11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,--std=gnu11 tags=preprocessor id=std=c11
+edgtk.optionConfig name=std=iso9899:2011 prefix=-- prefix=- tags=preprocessor id=std=c11
+edgtk.optionConfig name=-std param_value=iso9899:2011 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,-std=iso9899:2011 tags=preprocessor id=std=c11
+edgtk.optionConfig name=Wp,--std=iso9899:2011 tags=preprocessor id=std=c11
+
+
+edgtk.optionAlias option=std=c11 value=--edg.std_version=201112
+edgtk.optionAlias option=std=c11 value=--edg.restrict_keyword_enabled=TRUE
+edgtk.optionAlias option=std=c11 value=--edg.long_long_promotion_allowed=TRUE
+edgtk.optionAlias option=std=c11 value=--edg.uliterals_enabled=TRUE
+edgtk.optionConfig name=std=c++98 prefix=-- prefix=- tags=preprocessor id=std=c++98
+edgtk.optionConfig name=-std param_value=c++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,-std=c++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,--std=c++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=std=gnu++98 prefix=-- prefix=- tags=preprocessor id=std=c++98
+edgtk.optionConfig name=-std param_value=gnu++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,-std=gnu++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,--std=gnu++98 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=std=c++03 prefix=-- prefix=- tags=preprocessor id=std=c++98
+edgtk.optionConfig name=-std param_value=c++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,-std=c++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,--std=c++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=std=gnu++03 prefix=-- prefix=- tags=preprocessor id=std=c++98
+edgtk.optionConfig name=-std param_value=gnu++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,-std=gnu++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=Wp,--std=gnu++03 tags=preprocessor id=std=c++98
+edgtk.optionConfig name=std=c++0x prefix=-- prefix=- tags=preprocessor id=std=c++11
+edgtk.optionConfig name=-std param_value=c++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,-std=c++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,--std=c++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=std=gnu++0x prefix=-- prefix=- tags=preprocessor id=std=c++11
+edgtk.optionConfig name=-std param_value=gnu++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,-std=gnu++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,--std=gnu++0x tags=preprocessor id=std=c++11
+edgtk.optionConfig name=std=c++11 prefix=-- prefix=- tags=preprocessor id=std=c++11
+edgtk.optionConfig name=-std param_value=c++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,-std=c++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,--std=c++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=std=gnu++11 prefix=-- prefix=- tags=preprocessor id=std=c++11
+edgtk.optionConfig name=-std param_value=gnu++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,-std=gnu++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=Wp,--std=gnu++11 tags=preprocessor id=std=c++11
+edgtk.optionConfig name=std=c++1y prefix=-- prefix=- tags=preprocessor id=std=c++14
+edgtk.optionConfig name=-std param_value=c++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,-std=c++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,--std=c++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=std=gnu++1y prefix=-- prefix=- tags=preprocessor id=std=c++14
+edgtk.optionConfig name=-std param_value=gnu++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,-std=gnu++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,--std=gnu++1y tags=preprocessor id=std=c++14
+edgtk.optionConfig name=std=c++14 prefix=-- prefix=- tags=preprocessor id=std=c++14
+edgtk.optionConfig name=-std param_value=c++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,-std=c++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,--std=c++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=std=gnu++14 prefix=-- prefix=- tags=preprocessor id=std=c++14
+edgtk.optionConfig name=-std param_value=gnu++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,-std=gnu++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=Wp,--std=gnu++14 tags=preprocessor id=std=c++14
+edgtk.optionConfig name=std=c++1z prefix=-- prefix=- tags=preprocessor id=std=c++17
+edgtk.optionConfig name=-std param_value=c++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,-std=c++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,--std=c++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=std=gnu++1z prefix=-- prefix=- tags=preprocessor id=std=c++17
+edgtk.optionConfig name=-std param_value=gnu++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,-std=gnu++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,--std=gnu++1z tags=preprocessor id=std=c++17
+edgtk.optionConfig name=std=c++17 prefix=-- prefix=- tags=preprocessor id=std=c++17
+edgtk.optionConfig name=-std param_value=c++17 tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,-std=c++17 tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,--std=c++17 tags=preprocessor id=std=c++17
+edgtk.optionConfig name=std=gnu++17 prefix=-- prefix=- tags=preprocessor id=std=c++17
+edgtk.optionConfig name=-std param_value=gnu++17 tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,-std=gnu++17 tags=preprocessor id=std=c++17
+edgtk.optionConfig name=Wp,--std=gnu++17 tags=preprocessor id=std=c++17
+
+edgtk.optionAlias option=std= value=--edg.std_version=199000
+edgtk.optionAlias option=std= value=--edg.restrict_keyword_enabled=FALSE
+edgtk.optionAlias option=std= value=--edg.long_long_promotion_allowed=FALSE
+edgtk.optionAlias option=std= value=--edg.uliterals_enabled=FALSE
+
+edgtk.optionConfig name=aux-info params=1 concat=True tags=compiler
+edgtk.optionConfig name=no-integrated-cpp tags=preprocessor,linker
+edgtk.optionConfig name=traditional tags=preprocessor
+edgtk.optionConfig name=traditional-cpp tags=preprocessor
+edgtk.optionConfig name=nostdinc++ tags=preprocessor
+edgtk.optionConfig name=gen-decls tags=preprocessor
+edgtk.optionConfig name=pedantic tags=ignore,enable-warning
+edgtk.optionConfig name=pedantic-errors tags=ignore,warning-to-error
+edgtk.optionConfig name=p tags=preprocessor
+edgtk.optionConfig name=pg tags=preprocessor
+edgtk.optionConfig name=Q tags=preprocessor
+edgtk.optionConfig name=save-temps tags=compiler
+edgtk.optionConfig name=time tags=ignore
+edgtk.optionConfig name=param prefix=-- params=1 concat=True tags=compiler
+edgtk.optionConfig name=O tags=preprocessor
+edgtk.optionConfig name=O0 tags=preprocessor
+edgtk.optionConfig name=O1 tags=preprocessor
+edgtk.optionConfig name=O2 tags=preprocessor
+edgtk.optionConfig name=O3 tags=preprocessor
+edgtk.optionConfig name=Os tags=preprocessor
+edgtk.optionConfig name=l params=1 concat=True tags=linker,excludable
+edgtk.optionConfig name=nostartfiles tags=linker
+edgtk.optionConfig name=nodefaultlibs tags=linker
+edgtk.optionConfig name=nostdlib tags=linker
+edgtk.optionConfig name=s tags=linker
+edgtk.optionConfig name=static tags=ignore
+edgtk.optionConfig name=static-libgcc tags=linker
+edgtk.optionConfig name=shared tags=ignore
+edgtk.optionConfig name=shared-libgcc tags=linker
+edgtk.optionConfig name=symbolic tags=linker
+edgtk.optionConfig name=Xlinker params=1 concat=False tags=linker
+edgtk.optionConfig name=T params=1 concat=True tags=linker
+edgtk.optionConfig name=u params=1 concat=True tags=linker
+edgtk.optionConfig name=B params=1 concat=True tags=preprocessor,linker
+
+edgtk.optionConfig name=L params=1 concat=True tags=linker
+edgtk.optionConfig name=b params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=specs params=1 prefix=- prefix=-- separators="=" tags=preprocessor,linker
+edgtk.optionConfig name=V params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=EB tags=preprocessor,linker
+edgtk.optionConfig name=EL tags=preprocessor,linker
+edgtk.optionConfig name=G params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=Qn tags=preprocessor
+edgtk.optionConfig name=Qy tags=preprocessor
+edgtk.optionConfig name=YP,paths tags=linker
+edgtk.optionConfig name=Ym,dir tags=preprocessor
+edgtk.optionConfig name=nocpp tags=preprocessor
+edgtk.optionConfig name=pthread tags=preprocessor,linker
+edgtk.optionConfig name=sim tags=preprocessor,linker
+edgtk.optionConfig name=sim2 tags=preprocessor,linker
+
+# Various gcc/gcc-like compilers still use the deprecated 'changemode' tag for
+# handling the -x flag, but we want to start migrating to the new method that 
+# can handle other possible values (see PR102294)
+edgtk.optionConfig name=x params=1 concat=True tags=changemode
+
+edgtk.optionConfig name=threads tags=preprocessor,linker
+edgtk.optionConfig name=pthreads tags=preprocessor,linker
+edgtk.optionConfig name=nolibdld tags=preprocessor,linker
+edgtk.optionConfig name=pie tags=linker
+edgtk.optionConfig name=static-pie tags=linker
+edgtk.optionConfig name=Xpreprocessor params=1 concat=False tags=preprocessor
+edgtk.optionConfig name=Xassembler params=1 concat=False tags=compiler
+edgtk.optionConfig name=combine tags=ignore
+edgtk.optionConfig name=coverage prefix=-- tags=preprocessor,linker
+edgtk.optionConfig name=rdynamic tags=linker
+edgtk.optionConfig name=non-static tags=preprocessor,linker
+edgtk.optionConfig name=Bstatic tags=preprocessor,linker
+edgtk.optionConfig name=Bdynamic tags=preprocessor,linker
+edgtk.optionConfig name=Xbind-lazy tags=preprocessor,linker
+edgtk.optionConfig name=Xbind-now tags=preprocessor,linker
+edgtk.optionConfig name=gcc tags=preprocessor
+edgtk.optionConfig name=no-gcc tags=preprocessor
+edgtk.optionConfig name=no-crt0 tags=preprocessor,linker
+
+
+edgtk.optionConfig name=g tags=compiler,debug
+edgtk.optionConfig name=g params=1 concat=True tags=compiler,debug
+edgtk.optionConfig name=-print-file-name tags=preprocessor,cmdline-exclude,linker-exclude
+edgtk.optionConfig name=print- params=1 concat=True tags=preprocessor,cmdline-exclude
+edgtk.optionConfig name=dump params=1 concat=True tags=cmdline-exclude
+edgtk.optionConfig name=fsyntax-only tags=preprocessor,linker,cmdline-exclude
+
+edgtk.optionConfig name=fno-operator-names tags=preprocessor
+edgtk.optionAlias option=fno-operator-names value=--alternative_tokens_allowed=false
+
+
+
+edgtk.optionConfig name=mmmx tags=preprocessor
+edgtk.optionAlias option=mmmx value=--p_mmx_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=m3dnow tags=preprocessor
+edgtk.optionAlias option=m3dnow value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=m3dnow value=--p_3dnow_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse tags=preprocessor
+edgtk.optionAlias option=msse value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse value=--p_sse_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse2 tags=preprocessor
+edgtk.optionAlias option=msse2 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse2 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse2 value=--p_sse2_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse3 tags=preprocessor
+edgtk.optionAlias option=msse3 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse3 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse3 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse3 value=--p_sse3_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mssse3 tags=preprocessor
+edgtk.optionAlias option=mssse3 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mssse3 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mssse3 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mssse3 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mssse3 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse4.1 tags=preprocessor
+edgtk.optionAlias option=msse4.1 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.1 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.1 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.1 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.1 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.1 value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse4.2 tags=preprocessor
+edgtk.optionAlias option=msse4.2 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4.2 value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse4 tags=preprocessor
+edgtk.optionAlias option=msse4 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4 value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse4a tags=preprocessor
+edgtk.optionAlias option=msse4a value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4a value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4a value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4a value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse4a value=--p_sse4a_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msse5 tags=preprocessor
+edgtk.optionAlias option=msse5 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse5 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse5 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse5 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse5 value=--p_sse4a_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=msse5 value=--p_sse5_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx tags=preprocessor
+edgtk.optionAlias option=mavx value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx value=--p_avx_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mbmi tags=preprocessor
+edgtk.optionAlias option=mbmi value=--p_bmi_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mtbm tags=preprocessor
+edgtk.optionAlias option=mtbm value=--p_tbm_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mfsgsbase tags=preprocessor
+edgtk.optionAlias option=mfsgsbase value=--p_fsgsbase_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mrdrnd tags=preprocessor
+edgtk.optionAlias option=mrdrnd value=--p_rdrnd_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mf16c tags=preprocessor
+edgtk.optionAlias option=mf16c value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mf16c value=--p_f16c_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx2 tags=preprocessor
+edgtk.optionAlias option=mavx2 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx2 value=--p_avx2_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mbmi2 tags=preprocessor
+edgtk.optionAlias option=mbmi2 value=--p_bmi2_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mlzcnt tags=preprocessor
+edgtk.optionAlias option=mlzcnt value=--p_lzcnt_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=fgnu-tm tags=preprocessor
+edgtk.optionAlias option=fgnu-tm value=--p_tm_gnu_builtin_funcs_allowed=true
+edgtk.optionConfig name=mfxsr tags=preprocessor
+edgtk.optionAlias option=mfxsr value=--p_fxsr_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mxsave tags=preprocessor
+edgtk.optionAlias option=mxsave value=--p_xsave_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mxsaveopt tags=preprocessor
+edgtk.optionAlias option=mxsaveopt value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxsaveopt value=--p_xsaveopt_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mrdseed tags=preprocessor
+edgtk.optionAlias option=mrdseed value=--p_rdseed_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mrtm tags=preprocessor
+edgtk.optionAlias option=mrtm value=--p_rtm_gnu_builtin_funcs_allowed=true
+
+# If -ffreestanding is used then we have to ignore implicit preincludes we always specify
+edgtk.optionConfig name=ffreestanding tags=preprocessor
+edgtk.optionAlias option=ffreestanding value=--ignore-potential-preinclude=true
+
+edgtk.optionConfig name=mavx512f tags=preprocessor
+edgtk.optionAlias option=mavx512f value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512f value=--p_avx512f_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512cd tags=preprocessor
+edgtk.optionAlias option=mavx512cd value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512cd value=--p_avx512cd_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512er tags=preprocessor
+edgtk.optionAlias option=mavx512er value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512er value=--p_avx512er_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512pf tags=preprocessor
+edgtk.optionAlias option=mavx512pf value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512pf value=--p_avx512pf_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=msha tags=preprocessor
+edgtk.optionAlias option=msha value=--p_sha_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=maes tags=preprocessor
+edgtk.optionAlias option=maes value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=maes value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=maes value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=maes value=--p_aes_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mpclmul tags=preprocessor
+edgtk.optionAlias option=mpclmul value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mpclmul value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mpclmul value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mpclmul value=--p_pclmul_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mabm tags=preprocessor
+edgtk.optionAlias option=mabm value=--p_popcnt_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mabm value=--p_abm_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mfma tags=preprocessor
+edgtk.optionAlias option=mfma value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma value=--p_fma_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mfma4 tags=preprocessor
+edgtk.optionAlias option=mfma4 value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_sse4a_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mfma4 value=--p_fma4_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mlwp tags=preprocessor
+edgtk.optionAlias option=mlwp value=--p_lwp_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mcrc32 tags=preprocessor
+edgtk.optionAlias option=mcrc32 value=--p_crc32_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mxop tags=preprocessor
+edgtk.optionAlias option=mxop value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_sse4a_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_fma4_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxop value=--p_xop_gnu_builtin_funcs_allowed=true
+
+
+edgtk.optionConfig name=mxsaves tags=preprocessor
+edgtk.optionAlias option=mxsaves value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxsaves value=--p_xsaves_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mxsavec tags=preprocessor
+edgtk.optionAlias option=mxsavec value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mxsavec value=--p_xsavec_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512bw tags=preprocessor
+edgtk.optionAlias option=mavx512bw value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512bw value=--p_avx512bw_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512dq tags=preprocessor
+edgtk.optionAlias option=mavx512dq value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512dq value=--p_avx512dq_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512ifma tags=preprocessor
+edgtk.optionAlias option=mavx512ifma value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512ifma value=--p_avx512ifma_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512vbmi tags=preprocessor
+edgtk.optionAlias option=mavx512vbmi value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_avx512bw_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vbmi value=--p_avx512vbmi_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mavx512vl tags=preprocessor
+edgtk.optionAlias option=mavx512vl value=--p_mmx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_sse_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_sse2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_sse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_ssse3_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_sse4_1_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_sse4_2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_xsave_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_avx_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_avx2_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_avx512f_gnu_builtin_funcs_allowed=true
+edgtk.optionAlias option=mavx512vl value=--p_avx512vl_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mclflushopt tags=preprocessor
+edgtk.optionAlias option=mclflushopt value=--p_clflushopt_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mclwb tags=preprocessor
+edgtk.optionAlias option=mclwb value=--p_clwb_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mmwaitx tags=preprocessor
+edgtk.optionAlias option=mmwaitx value=--p_mwaitx_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mpcommit tags=preprocessor
+edgtk.optionAlias option=mpcommit value=--p_pcommit_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mmpx tags=preprocessor
+edgtk.optionAlias option=mmpx value=--p_mpx_gnu_builtin_funcs_allowed=true
+
+
+
+edgtk.optionConfig name=mpku tags=preprocessor
+edgtk.optionAlias option=mpku value=--p_pku_gnu_builtin_funcs_allowed=true
+
+edgtk.optionConfig name=mclzero tags=preprocessor
+edgtk.optionAlias option=mclzero value=--p_clzero_gnu_builtin_funcs_allowed=true
+
+
+edgtk.optionConfig name=fms-extensions tags=preprocessor,linker
+edgtk.optionAlias option=fms-extensions value=--edg.p_anon_union_c_mode_constructs_with_tags_are_anonymous=TRUE
+edgtk.optionConfig name=fpermissive tags=preprocessor,linker
+
+
+edgtk.optionConfig name=Wp, params=1 concat=True nospace=True tags=preprocessor
+edgtk.optionConfig name=Wa, params=1 concat=True nospace=True tags=compiler
+edgtk.optionConfig name=Wl, params=1 concat=True nospace=True tags=linker
+
+edgtk.optionConfig name=f params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=m params=1 concat=True tags=preprocessor,linker
+edgtk.optionConfig name=d params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=Wfatal-errors tags=preprocessor
+edgtk.optionConfig name=Wno-error= params=1 concat=True tags=preprocessor,error-to-warning
+edgtk.optionConfig name=Wno- params=1 concat=True tags=preprocessor,disable-warning
+edgtk.optionConfig name=W tags=ignore
+edgtk.optionConfig name=Werror= params=1 concat=True tags=ignore,warning-to-error
+edgtk.optionConfig name=W params=1 concat=True tags=ignore,enable-warning
+
+
+
+edgtk.optionConfig name=*.so regexp=True casesensitive=True tags=linker,excludable
+edgtk.optionConfig name=*.a regexp=True casesensitive=True tags=linker,excludable
+edgtk.optionConfig name=*.o regexp=True casesensitive=True tags=linker,excludable,object_file
+
+
+
+
+
+
+libdetector.ldvLinkerExecutable g++
+
+libdetector.ldvLinkerSupportsResponseFile TRUE
+
+
+libdetector.libraryDetectSchema gnu
+
+
+libdetector.realCmdLnExtractSchema default
+libdetector.realCmdLnRemoveExec=false
+
+libdetector.ldTypeDetectCommand {exe} -Xlinker -V -o {tmp} &> {out}
+libdetector.ldTypeDetectPattern pattern="Solaris Link Editors" ld=sun
+libdetector.ldTypeDetectPattern pattern="Solaris-ELF" ld=sun
+libdetector.ldTypeDetectPattern pattern="GNU ld" ld=gnu
+
+libdetector.gnuLdLinkerCommand {exe} {opts} -Wl,--verbose &> {out}
+libdetector.gnuLdEnvironmentVariable LC_ALL=C
+
+libdetector.ibmLdLinkerCommand {exe} {opts} -Xlinker -bnoquiet &> {out}
+
+libdetector.sunLdLinkerCommand1 {exe} -v {opts} &> {out}
+libdetector.sunLdLinkerCommand2 {opts} __HARNESS__.o &> {out}
+libdetector.sunLdEnvironmentVariable2 LD_OPTIONS=-Dfiles
+
+#This options was used to parse linker command line. Now, we dont do that.
+#libdetector.ldvLinkerOption name=static
+#libdetector.ldvLinkerOption name=static-libgcc
+#libdetector.ldvLinkerOption name=shared
+#libdetector.ldvLinkerOption name=shared-libgcc
+#libdetector.ldvLinkerOption name=nodefaultlibs
+#libdetector.ldvLinkerOption name=nostdlib
+#libdetector.ldvLinkerOption name=B params=1 concat=true
+#libdetector.ldvLinkerOption name=L params=1 concat=true
+#libdetector.ldvLinkerOption name=specs= params=1 concat=true
+
+lsc.use64bits TRUE
+
+symmatcher.manglingSchema gcc
+
+pscom.configVersion 100402
+pscom.isCppConfig FALSE
+
+pscom.fileSystemIsCaseSensitive TRUE
+ 
+
+
+xharness.testCaseTemplateFile $PROGRAMSDIR$/test_case_template_c.tja
+xharness.mWTypeInitializerFile $PROGRAMSDIR$/type_init_mw_c.tja
+
+xharness.callInstrumentationScript id=malloc script=$PROGRAMSDIR$/ma_call_malloc.tja
+xharness.callInstrumentationScript id=cpptestMalloc script=$PROGRAMSDIR$/ma_call_malloc.tja
+xharness.callInstrumentationScript id=cpptestAlloc script=$PROGRAMSDIR$/ma_call_alloc.tja
+xharness.callInstrumentationScript id=calloc script=$PROGRAMSDIR$/ma_call_calloc.tja
+xharness.callInstrumentationScript id=realloc script=$PROGRAMSDIR$/ma_call_realloc.tja
+xharness.callInstrumentationScript id=free script=$PROGRAMSDIR$/ma_call_free.tja
+xharness.callInstrumentationScript id=cpptestFree script=$PROGRAMSDIR$/ma_call_free.tja
+xharness.callInstrumentationScript id=memset script=$PROGRAMSDIR$/ma_call_memset.tja
+xharness.callInstrumentationScript id=cpptestMemset script=$PROGRAMSDIR$/ma_call_memset.tja
+xharness.callInstrumentationScript id=memcpy script=$PROGRAMSDIR$/ma_call_memcpy.tja
+xharness.callInstrumentationScript id=strcpy script=$PROGRAMSDIR$/ma_call_strcpy.tja
+xharness.callInstrumentationScript id=_Z6strcpyPcPKc script=$PROGRAMSDIR$/ma_call_strcpy.tja
+
+
+# We don't want to touch this global variables. There is no way we can
+# construct it or member-wise initialize them.
+
+xharness.variableManager symbol_name=stdout command=setProperty property=ignored value=true
+xharness.variableManager symbol_name=stdin  command=setProperty property=ignored value=true
+
+# More variable manager options can be in specific compiler directories.
+
+xharness.routineManager symbol_name=pthread_create command=setProperty property=canUseOrigNameForStub value=false
+xharness.macroToUndefine unix
+xharness.macroToUndefine __unix
+xharness.skipFunctionScopeIfDeclaredOnlyAsFriend FALSE
+xharness.variableManager symbol_name=stubCallInfo command=setProperty property=ignored value=true
+
+xharness.asmCoverageExcludedFunction *_CPTR_*
+
+
+xharness.asmCoverageExcludedFunctionFileGenerator edg
+
+xharness.asmCoverageExcludedFunction *get_pc_thunk*
+
+
+codewizard.sourceCodePointCorrectorAlgorithm GCC3

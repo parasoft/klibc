@@ -8,12 +8,16 @@
 typedef signed char		int8_t;
 typedef short int		int16_t;
 typedef int			int32_t;
+#ifndef __KERNEL__
 typedef long int		int64_t;
+#endif
 
 typedef unsigned char		uint8_t;
 typedef unsigned short int	uint16_t;
 typedef unsigned int		uint32_t;
+#ifndef __KERNEL__
 typedef unsigned long int	uint64_t;
+#endif
 
 typedef long int		int_fast16_t;
 typedef long int		int_fast32_t;

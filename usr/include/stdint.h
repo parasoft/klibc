@@ -5,7 +5,7 @@
 #ifndef _STDINT_H
 #define _STDINT_H
 
-//#include <bitsize/stdint.h>
+#include <bitsize/stdint.h>
 #include <linux/types.h>
 
 typedef int8_t		int_least8_t;

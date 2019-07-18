@@ -25,7 +25,9 @@ typedef __kernel_fd_set fd_set;
 typedef uint32_t dev_t;
 typedef __kernel_ino_t ino_t;
 typedef __kernel_mode_t mode_t;
-//typedef __kernel_loff_t off_t;
+#ifndef __KERNEL__
+typedef __kernel_loff_t off_t;
+#endif
 typedef __kernel_loff_t loff_t;
 typedef __kernel_pid_t pid_t;
 typedef __kernel_daddr_t daddr_t;

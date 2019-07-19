@@ -22,8 +22,8 @@
  #### Linux project setup:
  * New project from CPPtest bdf ( use the bdf generated from cpptesttrace )
  * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
-   * "Compiler options" append with `-D__KLIBC__ -include ./include/generated/autoconf.h -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
-   * "Linker options" append with `-static -nostartfiles -nodefaultlibs -nostdlib {path to klibc dir}/usr/klibc/libc.a`
+   * "Compiler options" append with ` -include ./include/generated/autoconf.h -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
+   * "Linker options" append with ` {path to klibc dir}/usr/klibc/libc.a`
  #### Make user defined version of, File Scoped, Test Configuration for Stub Generation:
  * In the top navigation bar click on Parasoft -> Test Configurations...
   * In the left panel navigate to the item: Builtin -> Unit Testing -> File Scope -> Generate Stubs (File Scope)

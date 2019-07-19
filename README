@@ -1,4 +1,4 @@
-Please see cpptest/README.txt for information on how to use klibc with
+Please see cpptest/README.md for information on how to use klibc with
 Cpptest to generate Linux kernel Unit Tests.
 
 Please see usr/klibc/README.klibc for build instructions and for the status of

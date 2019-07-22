@@ -41,7 +41,7 @@
     * Find "Executaion" tab -> "Symbols" tab -> "Use extra symbols from file found in:" dialog box.
     * Remove the string "${cpptest:cfg_dir}/safestubs;"
     * Find the "Test Execution flow" line, Click on the "Edit..." button.
-    * In the diologue that apperase find the string "<BuildRuntimeLibStep ignoreDbgOpts="true" autoBuildDefault="false" />"
+    * In the diologue that apperase find the string '\<BuildRuntimeLibStep ignoreDbgOpts="true" autoBuildDefault="false" />'
     * Change the autoBuildDefault value to true.
  #### Get started Unit Testing a source file:
  * In Navigator right click on a source file and drill down to: Parasoft -> Test Using -> Builtin -> Unit Testing -> Generate Test Suite

@@ -19,7 +19,7 @@
  #### Linux project setup:
  * New project from C++test bdf ( use the bdf generated from cpptesttrace )
  * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
-   * Verify "copmiler settings" -> "Family" is set to 'CBU GCC 7.x (x86_64)' This compiler target is the only one modified for Linux testing.
+   * Verify "copmiler settings" -> "Family" is set to 'CNU GCC 7.x (x86_64)' This compiler target is the only one modified for Linux testing.
    * "Compiler options" append with ` -D__KLIBC__ -include ./include/generated/autoconf.h -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
    * "Linker options" append with ` {path to klibc dir}/usr/klibc/libc.a`
  #### Make user defined versions of the File Scoped Test Configurations for "Stub Generation" and "Run Unit Tests":

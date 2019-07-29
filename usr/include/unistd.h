@@ -120,7 +120,7 @@ __extern int ftruncate(int, off_t);
 __extern int sync(void);
 __extern int fsync(int);
 __extern int fdatasync(int);
-__extern int sync_file_range(int, off_t, off_t, unsigned int);
+//__extern int sync_file_range(int, off_t, off_t, unsigned int);
 
 __extern int pause(void);
 __extern unsigned int alarm(unsigned int);

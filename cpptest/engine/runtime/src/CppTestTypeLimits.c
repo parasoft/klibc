@@ -95,7 +95,7 @@ unsigned long CDECL_CALL cpptestLimitsGetMaxUnsignedLong(void)
     return ULONG_MAX;
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 float CDECL_CALL cpptestLimitsGetMaxPosFloat(void)
 {
     return FLT_MAX;

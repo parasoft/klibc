@@ -583,5 +583,9 @@
 #  define TRIGGER_IMPLEMENTATION 1
 #endif /* CPPTEST_DRIVER */
 
+#ifndef CPPTEST_DISABLE_ALL_FLOATING_POINT
+#define CPPTEST_DISABLE_ALL_FLOATING_POINT 0
+#endif
+
 
 #endif  /* __CppTest_PortInfo_h__ */

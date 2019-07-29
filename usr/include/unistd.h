@@ -13,6 +13,7 @@
 #include <sys/select.h>
 
 __extern char **environ;
+// @todo this is a temporary hack to make sure the kernel takes priority
 //__extern void __noreturn _exit(int);
 
 __extern pid_t fork(void);
@@ -120,6 +121,7 @@ __extern int ftruncate(int, off_t);
 __extern int sync(void);
 __extern int fsync(int);
 __extern int fdatasync(int);
+// @todo this is a temporary hack to make sure the kernel takes priority
 //__extern int sync_file_range(int, off_t, off_t, unsigned int);
 
 __extern int pause(void);

@@ -19,7 +19,7 @@
 
 #else
 
-extern __noreturn __assert_fail(const char *, const char *, unsigned int);
+extern void __noreturn __assert_fail(const char *, const char *, unsigned int);
 
 #define assert(x) ((x) ? (void)0 : __assert_fail(#x, __FILE__, __LINE__))
 

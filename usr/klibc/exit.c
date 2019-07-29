@@ -13,7 +13,7 @@
 /* Link chain for atexit/on_exit */
 struct atexit *__atexit_list;
 
-__noreturn exit(int rv)
+void __noreturn exit(int rv)
 {
 	struct atexit *ap;
 

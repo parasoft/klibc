@@ -13,7 +13,7 @@
 #include <klibc/archsetjmp.h>
 
 __extern int setjmp(jmp_buf);
-__extern __noreturn longjmp(jmp_buf, int);
+__extern void __noreturn longjmp(jmp_buf, int);
 
 /*
   Whose bright idea was it to add unrelated functionality to just about
@@ -38,6 +38,6 @@ typedef struct __sigjmp_buf sigjmp_buf[1];
   setjmp(__e->__jmpbuf); \
 })
 
-__extern __noreturn siglongjmp(sigjmp_buf, int);
+__extern void __noreturn siglongjmp(sigjmp_buf, int);
 
 #endif				/* _SETJMP_H */

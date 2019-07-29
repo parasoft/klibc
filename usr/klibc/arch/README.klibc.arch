@@ -27,9 +27,9 @@ The "getenvtest" test program is a very good test for proper crt0.S
 functionality.
 
 
-extern __noreturn __libc_init(void *, void *);
+extern void __noreturn __libc_init(void *, void *);
 
-__noreturn _start(void)
+void __noreturn _start(void)
 {
   void *elf_data   = get_elf_data_address(); /* Usually the stack address */
   void *atexit_ptr = get_atexit_ptr();       /* Usually in a register */

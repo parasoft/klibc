@@ -19,14 +19,14 @@ char *progname;
 static struct extra_opts extra;
 static unsigned long rwflag;
 
-static __noreturn usage(void)
+static void __noreturn usage(void)
 {
 	fprintf(stderr, "Usage: %s [-r] [-w] [-o options] [-t type] [-f] [-i] "
 		"[-n] device directory\n", progname);
 	exit(1);
 }
 
-static __noreturn print_mount(char *type)
+static void __noreturn print_mount(char *type)
 {
 	FILE *mfp;
 	struct mntent *mnt;

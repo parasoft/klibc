@@ -15,7 +15,7 @@ static int p_flag;
 
 char *progname;
 
-static __noreturn usage(void)
+static void __noreturn usage(void)
 {
 	fprintf(stderr, "Usage: %s [-p] [-m mode] dir...\n", progname);
 	exit(1);

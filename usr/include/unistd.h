@@ -13,7 +13,7 @@
 #include <sys/select.h>
 
 __extern char **environ;
-//__extern __noreturn _exit(int);
+//__extern void __noreturn _exit(int);
 
 __extern pid_t fork(void);
 __extern pid_t vfork(void);

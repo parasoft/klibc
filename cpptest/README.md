@@ -10,6 +10,7 @@
 * `make menuconfig`
 * `make headers_install `INSTALL_HDR_PATH={path to klibc dir}/linux
 * `cpptesttrace make`
+  * C++Test BDF generation has only tested with in-tree driver development.
     
  ### In klibc project:
  * `cp -r cpptest/* {path to Cpptest install}/10.4`
@@ -20,7 +21,7 @@
  * New project from C++test bdf ( use the bdf generated from cpptesttrace )
  * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
    * Verify "copmiler settings" -> "Family" is set to 'CNU GCC 7.x (x86_64)' This compiler target is the only one modified for Linux testing.
-   * "Compiler options" append with ` -D__KLIBC__ -include ./include/generated/autoconf.h -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
+   * "Compiler options" append with ` -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
    * "Linker options" append with ` {path to klibc dir}/usr/klibc/libc.a`
  #### Make user defined versions of the File Scoped Test Configurations for "Stub Generation" and "Run Unit Tests":
  * In the top navigation bar click on Parasoft -> Test Configurations...

@@ -26,9 +26,9 @@
  * In the top navigation bar click on Parasoft -> Test Configurations...
   * In the left panel navigate to the item: Builtin -> Unit Testing -> File Scope -> Generate Stubs (File Scope)
   * Right click on "Generate Stubs (File Scope)" and "Run Unit Tests (File Scope)" -> Duplicate
-  * The duplacte will reside in User-defined -> Unit Testing -> File Scope -> {name of new test configuration}
+  * The duplicate will reside in User-defined -> Unit Testing -> File Scope -> {name of new test configuration}
   * click on the new Test Configuration:
-    * Find "Executaion" tab -> "Symbols" tab -> "Use extra symbols from file found in:" dialog box.
+    * Find "Execution" tab -> "Symbols" tab -> "Use extra symbols from file found in:" dialog box.
     * Remove the string "${cpptest:cfg_dir}/safestubs;"
  #### Get started Unit Testing a source file:
  * In Navigator right click on a source file and drill down to: Parasoft -> Test Using -> Builtin -> Unit Testing -> Generate Test Suite

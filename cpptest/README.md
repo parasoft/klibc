@@ -10,7 +10,7 @@
 * `make menuconfig`
 * `make headers_install `INSTALL_HDR_PATH={path to klibc dir}/linux
 * `cpptesttrace make`
-  * C++Test BDF generation has only tested with in-tree driver development.
+  * C++Test BDF generation has only been tested with in-tree driver development.
     
  ### In klibc project:
  * `cp -r cpptest/* {path to Cpptest install}/10.4`

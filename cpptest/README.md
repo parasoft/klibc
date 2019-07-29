@@ -20,16 +20,16 @@
  #### Linux project setup:
  * New project from C++test bdf ( use the bdf generated from cpptesttrace )
  * Modify Project Properties -> Parasoft -> C/C++test -> Build Settings:
-   * Verify "copmiler settings" -> "Family" is set to 'CNU GCC 7.x (x86_64)' This compiler target is the only one modified for Linux testing.
+   * Verify "compiler settings" -> "Family" is set to 'CNU GCC 7.x (x86_64)' This compiler target is the only one modified for Linux testing.
    * "Compiler options" append with ` -isystem {path to klibc}/usr/include -isystem {path to klibc}/usr/include/arch/x86_64 -isystem {path to klibc}/usr/include/bits64`
    * "Linker options" append with ` {path to klibc dir}/usr/klibc/libc.a`
  #### Make user defined versions of the File Scoped Test Configurations for "Stub Generation" and "Run Unit Tests":
  * In the top navigation bar click on Parasoft -> Test Configurations...
-  * In the left panel navigate to the item: Builtin -> Unit Testing -> File Scope -> Generate Stubs (File Scope)
+  * In the left panel navigate to the item: Builtin -> Unit Testing -> File Scope
   * Right click on "Generate Stubs (File Scope)" and "Run Unit Tests (File Scope)" -> Duplicate
-  * The duplicate will reside in User-defined -> Unit Testing -> File Scope -> {name of new test configuration}
+  * The duplicates will reside in User-defined -> Unit Testing -> File Scope -> {name of new test configuration}
   * click on the new Test Configuration:
-    * Find "Execution" tab -> "Symbols" tab -> "Use extra symbols from file found in:" dialog box.
+    * Find "Execution" tab -> "Symbols" tab -> "Use extra symbols from file found in:" box.
     * Remove the string "${cpptest:cfg_dir}/safestubs;"
  #### Get started Unit Testing a source file:
  * In Navigator right click on a source file and drill down to: Parasoft -> Test Using -> Builtin -> Unit Testing -> Generate Test Suite

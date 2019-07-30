@@ -1799,6 +1799,7 @@ edgtk.optionConfig name=trigraphs tags=preprocessor
 edgtk.optionConfig name=undef tags=preprocessor
 edgtk.optionConfig name=U params=1 concat=True tags=preprocessor,undefines_macro
 
+edgtk.optionConfig name=fno-stack-protector tags=preprocessor
 
 edgtk.optionConfig name=c tags=compiler,linker-exclude
 edgtk.optionConfig name=S tags=ignore
@@ -2001,11 +2002,11 @@ edgtk.optionConfig name=O2 tags=preprocessor
 edgtk.optionConfig name=O3 tags=preprocessor
 edgtk.optionConfig name=Os tags=preprocessor
 edgtk.optionConfig name=l params=1 concat=True tags=linker,excludable
-edgtk.optionConfig name=nostartfiles tags=linker
-edgtk.optionConfig name=nodefaultlibs tags=linker
-edgtk.optionConfig name=nostdlib tags=linker
+edgtk.optionConfig name=nostartfiles tags=preprocessor
+edgtk.optionConfig name=nodefaultlibs tags=preprocessor
+edgtk.optionConfig name=nostdlib tags=preprocessor
 edgtk.optionConfig name=s tags=linker
-edgtk.optionConfig name=static tags=linker
+edgtk.optionConfig name=static tags=preprocessor
 edgtk.optionConfig name=static-libgcc tags=linker
 edgtk.optionConfig name=shared tags=ignore
 edgtk.optionConfig name=shared-libgcc tags=linker

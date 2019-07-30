@@ -36,7 +36,7 @@
  * In Test Case Explorer right click on TestSuite_{source file name} and drill down to: Add New -> Test Case Using Editor...
  * Open the new test case in the editor.
   * Pick a function from the "Create test case for" dropdown menu.
-  * populate the testcase by pressing the green arrow to the right of your function selection.
+  * populate the testcase by pressing the green '+' to the right of your function selection.
   * Save the test case.
 * In the Test Case explorer right click on the new Test Case and drill down to: Test Using -> User Defined -> Unit Testing -> File Scoped -> {name of new test configuration for generating stubs}
 * In the Test Case explorer right click on the new Test Case and drill down to: Test Using -> User Defined -> Unit Testing -> File Scoped -> {name of new test configuration for running unit tests}

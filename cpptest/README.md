@@ -2,7 +2,7 @@
 ###### The current version is just a dump of my notes on bootstraping my own dev env
 
 ### This guide assumes:
-* Cpptest 10.4 Professional is installed
+* Cpptest 10.4.2 Professional is installed
 * a git clone of the Linux kernel ( tag v4.12 tested for this guide )
 * a git clone of Cpptest klibc fork ( this project )
 

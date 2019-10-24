@@ -51,7 +51,7 @@ extern void __libc_init_stdio(void);
 
 unsigned long __auxval[_AUXVAL_MAX];
 
-__noreturn __libc_init(uintptr_t * elfdata, void (*onexit) (void))
+void __noreturn __libc_init(uintptr_t * elfdata, void (*onexit) (void))
 {
 	int argc;
 	char **argv, **envp, **envend;

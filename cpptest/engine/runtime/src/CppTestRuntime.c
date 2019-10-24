@@ -1324,7 +1324,7 @@ int CDECL_CALL cpptestUIntegerEqualAssertion(int value, CPPTEST_UINTEGER expecte
     return value;
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 int CDECL_CALL cpptestFloatEqualAssertion(int value, CPPTEST_FLOAT expected, CPPTEST_FLOAT actual,
         int hasDelta, CPPTEST_FLOAT delta, unsigned int* arrayIndex,
         const char* userMessage, const char* expectedStr, const char* actualStr, 
@@ -2040,7 +2040,7 @@ void CDECL_CALL cpptestReportUInteger(const char* txt, CPPTEST_UINTEGER value, C
     }
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 CPPTEST_EVENT_HANDLER
 void CDECL_CALL cpptestReportFloat(const char* txt, CPPTEST_FLOAT value, CppTest_StubCallInfo* sci, const char *file, unsigned line)
 {
@@ -2200,7 +2200,7 @@ void CDECL_CALL cpptestPostConditionUInteger(const char* valueString, CPPTEST_UI
     }
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 CPPTEST_EVENT_HANDLER
 void CDECL_CALL cpptestPostConditionFloat(const char* valueString, CPPTEST_FLOAT value, const char *file, unsigned line)
 {

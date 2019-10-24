@@ -15,7 +15,7 @@
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
 
-__extern __noreturn abort(void);
+__extern void __noreturn abort(void);
 static __inline__ int abs(int __n)
 {
 	return (__n < 0) ? -__n : __n;
@@ -26,8 +26,8 @@ __extern int on_exit(void (*)(int, void *), void *);
 __extern int atoi(const char *);
 __extern long atol(const char *);
 __extern long long atoll(const char *);
-__extern __noreturn exit(int);
-__extern __noreturn _exit(int);
+__extern void __noreturn exit(int);
+__extern void __noreturn _exit(int);
 #define _Exit _exit
 static __inline__ long labs(long __n)
 {

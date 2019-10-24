@@ -4,7 +4,7 @@
 #include <sys/reboot.h>
 #include <klibc/compiler.h>
 
-static __noreturn usage(void)
+static void __noreturn usage(void)
 {
 	static char mesg[] = "Usage: {halt|reboot|poweroff} [-n] [reboot-arg]\n";
 	write(2, mesg, sizeof(mesg) - 1);

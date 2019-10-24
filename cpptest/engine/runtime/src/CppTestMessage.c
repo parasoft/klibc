@@ -267,7 +267,7 @@ void cpptestSendBoolArgument(unsigned int kind, int value)
     CPPTEST_SEND_UINT8_VALUE(CPPTEST_SHORT_DATA_FLAG | (value ? 1U : 0U));
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 void cpptestSendFloatArgument(unsigned int kind, CPPTEST_FLOAT value)
 {
     char valueStr[24];

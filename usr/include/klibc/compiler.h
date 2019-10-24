@@ -61,9 +61,9 @@
 
 /* How to declare a function that does not return */
 #ifdef __GNUC__
-# define __noreturn void __attribute__((noreturn))
+# define __noreturn __attribute__((noreturn))
 #else
-# define __noreturn void
+# define __noreturn
 #endif
 
 /* "const" function:

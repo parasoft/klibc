@@ -61,11 +61,28 @@
 #define CPPTEST_PRINTF_UINTEGER CPPTEST_UINTEGER
 #define CPPTEST_PRINTF_UINTEGER_FMT "%llu"
 
+// this is defined when -mno-80387 or -msoft-float is on the line
+#ifdef _SOFT_FLOAT 
+#   ifdef CPPTEST_DISABLE_ALL_FLOATING_POINT 
+#       undef CPPTEST_DISABLE_ALL_FLOATING_POINT
+#   endif
+#   define CPPTEST_DISABLE_ALL_FLOATING_POINT 1
+#else 
+#   ifdef __KERNEL__
+#      ifdef CPPTEST_DISABLE_ALL_FLOATING_POINT 
+#          undef CPPTEST_DISABLE_ALL_FLOATING_POINT
+#      endif
+#      define CPPTEST_DISABLE_ALL_FLOATING_POINT 1
+#   endif
+#endif
+
+#if CPPTEST_DISABLE_ALL_FLOATING_POINT
 #define CPPTEST_FLOAT CPPTEST_INTEGER
 //#define CPPTEST_PRINTF_FLOAT CPPTEST_FLOAT
 //#define CPPTEST_PRINTF_FLOAT_FMT "%e"
 //#define CPPTEST_SCANF_FLOAT CPPTEST_FLOAT
 //#define CPPTEST_SCANF_FLOAT_FMT "%le"
+#endif
 
 #if (defined(_XOPEN_SOURCE) && _XOPEN_SOURCE >= 600) || defined(_STDC_99)
 #  ifndef CPPTEST_HAS_STRTOLD
@@ -105,3 +122,4 @@
 #ifndef CPPTEST_HAS_LONG_DOUBLE
 #  define CPPTEST_HAS_LONG_DOUBLE 0
 #endif
+

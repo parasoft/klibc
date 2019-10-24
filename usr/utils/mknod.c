@@ -5,7 +5,7 @@
 
 char *progname;
 
-static __noreturn usage(void)
+static void __noreturn usage(void)
 {
 	fprintf(stderr, "Usage: %s [-m mode] name {b|c|p} major minor\n",
 			progname);

@@ -299,13 +299,13 @@ CPPTEST_UINTEGER CDECL_CALL CppTest_DsGetUInteger(struct CppTest_DataSource* ds,
     /* Not reached */
     return 0;
 }
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 
-#if defined(CPPTEST_STRING_TO_FLOAT)
+#   if defined(CPPTEST_STRING_TO_FLOAT)
 
-#  ifdef CPPTEST_STRING_TO_FLOAT_DECL
+#      ifdef CPPTEST_STRING_TO_FLOAT_DECL
 CPPTEST_STRING_TO_FLOAT_DECL
-#  endif
+#      endif
 
 static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
 {
@@ -313,21 +313,21 @@ static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
     return CPPTEST_STRING_TO_FLOAT(str);
 }
 
-#elif CPPTEST_HAS_STRTOLD || CPPTEST_HAS_STRTOD || defined(CPPTEST_STR_TO_FLOAT)
+#   elif CPPTEST_HAS_STRTOLD || CPPTEST_HAS_STRTOD || defined(CPPTEST_STR_TO_FLOAT)
 
 static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
 {
     CPPTEST_FLOAT result = 0;
     char* end = (char*)str;
 
-#  if CPPTEST_HAS_STRTOLD
+#      if CPPTEST_HAS_STRTOLD
     result = CPPTEST_C_std strtold(str, &end);
-#  elif CPPTEST_HAS_STRTOD
+#      elif CPPTEST_HAS_STRTOD
     result = CPPTEST_C_std strtod(str, &end);
-#else
+#      else
     /* deprecated */
     CPPTEST_STR_TO_FLOAT(result, str, end);
-#  endif
+#      endif
     if (*end == 'f' || *end == 'F' || *end == 'l' || *end == 'L') {
         ++end;
     }
@@ -336,7 +336,7 @@ static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
     return result;
 }
 
-#elif defined(CPPTEST_SCANF_FLOAT) && defined(CPPTEST_SCANF_FLOAT_FMT)
+#   elif defined(CPPTEST_SCANF_FLOAT) && defined(CPPTEST_SCANF_FLOAT_FMT)
 
 static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
 {
@@ -352,7 +352,7 @@ static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
     return result;
 }
 
-#else
+#   else
 
 static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
 {
@@ -360,7 +360,7 @@ static CPPTEST_FLOAT CDECL_CALL dsStrToFloat(const char* str, int* err)
     return 0;
 }
 
-#endif
+#   endif
 
 
 CPPTEST_FLOAT CDECL_CALL CppTest_DsGetFloat(struct CppTest_DataSource* ds, const char* name)
@@ -381,7 +381,7 @@ CPPTEST_FLOAT CDECL_CALL CppTest_DsGetFloat(struct CppTest_DataSource* ds, const
     return 0;
 }
 
-#endif /* !__KERNEL__ */
+#endif /* !CPPTEST_DISABLE_ALL_FLOATING_POINT */
 
 int CDECL_CALL CppTest_DsGetBool(struct CppTest_DataSource* ds, const char* name)
 {
@@ -719,7 +719,7 @@ CppTest_DataSource* CDECL_CALL CppTest_DsArray(const char** data, int rows, int 
     ds->getMemBuffer = &CppTest_DsGetMemBuffer;
     ds->getInteger   = &CppTest_DsGetInteger;
     ds->getUInteger  = &CppTest_DsGetUInteger;
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
     ds->getFloat     = &CppTest_DsGetFloat;
 #endif
     ds->getBool      = &CppTest_DsGetBool;
@@ -1351,7 +1351,7 @@ CppTest_DataSource* CDECL_CALL CppTest_DsCsv(const char* fileName,
         ds->getMemBuffer = &CppTest_DsCsvGetMemBuffer;
         ds->getInteger   = &CppTest_DsGetInteger;
         ds->getUInteger  = &CppTest_DsGetUInteger;
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
         ds->getFloat     = &CppTest_DsGetFloat;
 #endif
         ds->getBool      = &CppTest_DsGetBool;

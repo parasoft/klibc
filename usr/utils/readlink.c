@@ -5,7 +5,7 @@
 
 const char *progname;
 
-static __noreturn usage(void)
+static void __noreturn usage(void)
 {
 	fprintf(stderr, "Usage: %s [-f] link...\n", progname);
 	exit(1);

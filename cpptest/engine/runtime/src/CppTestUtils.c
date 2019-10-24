@@ -486,7 +486,7 @@ int CDECL_CALL cpptestMemBuffersEqual(const void* expected, const void* actual, 
     return size == 0U;
 }
 
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 int CDECL_CALL cpptestFloatsFmtEqual(const char* expected, CPPTEST_FLOAT actual)
 {
     char buf[24];

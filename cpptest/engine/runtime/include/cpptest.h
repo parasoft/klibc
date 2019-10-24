@@ -740,7 +740,7 @@ static CPPTEST_UINTEGER CPPTEST_DS_GET_UINTEGER(const char* name)
 {
     return CPPTEST_DS_METHOD(cpptestGetCurrentDataSource(), getUInteger)(cpptestGetCurrentDataSource(), name);
 }
-#ifndef __KERNEL__
+#if !CPPTEST_DISABLE_ALL_FLOATING_POINT
 static CPPTEST_FLOAT CPPTEST_DS_GET_FLOAT(const char* name)
 {
     return CPPTEST_DS_METHOD(cpptestGetCurrentDataSource(), getFloat)(cpptestGetCurrentDataSource(), name);

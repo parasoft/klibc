@@ -1779,7 +1779,7 @@ edgtk.optionConfig name=idirafter params=1 concat=True tags=preprocessor
 
 
 
-edgtk.optionConfig name=include prefix=-- prefix=- params=1 concat=True tags=preprocessor
+edgtk.optionConfig name=include prefix=-- prefix=- params=1 concat=True tags=preprocessor,preprocessor_only,preinlude
 
 edgtk.optionAlias option=include value=--preinclude-file={ARGV[1]}
 edgtk.optionConfig name=imacros params=1 concat=True tags=preprocessor

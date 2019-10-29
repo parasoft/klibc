@@ -2006,7 +2006,7 @@ edgtk.optionConfig name=nostartfiles tags=preprocessor
 edgtk.optionConfig name=nodefaultlibs tags=preprocessor
 edgtk.optionConfig name=nostdlib tags=preprocessor
 edgtk.optionConfig name=s tags=linker
-edgtk.optionConfig name=static tags=preprocessor
+edgtk.optionConfig name=static tags=linker
 edgtk.optionConfig name=static-libgcc tags=linker
 edgtk.optionConfig name=shared tags=ignore
 edgtk.optionConfig name=shared-libgcc tags=linker
